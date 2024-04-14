@@ -1,9 +1,9 @@
-def _kpi_(url, first, second):
+def _kpi_(url, start_date, end_date):
 	import pandas as pd
 	import numpy as np
 	src = url
-	df = pd.read_csv(src)
-	df = df[df['date'].between(first, second)]
+	df = pd.read_csv('files/'+src)
+	df = df[df['date'].between(start_date, end_date)]
 	mp = df.query("branch == 'MP'") \
 	.groupby('date', as_index=False) \
 	.agg({'place': 'sum'}) \
@@ -40,20 +40,20 @@ def _kpi_(url, first, second):
 	#create new column 'Good' using the function above
 	mp['weight'] = mp.apply (f, axis=1)
 	mp['result'] = mp.kpi*mp.weight
-	mp['money'] = mp.result*1000
+	mp['money'] = mp.result*880.952381
 
 	kf['weight'] = kf.apply (f, axis=1)
 	kf['result'] = kf.kpi*kf.weight
-	kf['money'] = kf.result*1000
+	kf['money'] = kf.result*880.952381
 
 	print ('*'*20, 'KPI Маркетплейс', '*'*20)
 	print(mp)
-	print('Сумма: ', round((mp.result * 1000).sum(), 2))
+	print('Сумма: ', round((mp.result * 880.952381).sum(), 2))
 	print ('*'*20, 'KPI Купи Флакон', '*'*20)
 	print(kf)
-	print('Сумма: ', round((kf.result * 1000).sum(), 2))
+	print('Сумма: ', round((kf.result * 880.952381).sum(), 2))
 	print ('*'*20, 'Итог', '*'*20)
-	print('Итого сумма: ', round((mp.result * 1000).sum() + (kf.result * 1000).sum(), 2))
+	print('Итого сумма: ', round((mp.result * 880.952381).sum() + (kf.result * 880.952381).sum(), 2))
 	print('*'*20, 'Маркетплейс', '*'*20)
 	df_mp = df.query(f'branch == "MP"').groupby('t_c', as_index=False)['place'].sum().sort_values('place', ascending=False)
 	df_mp['percent'] = df_mp.place/df_mp.place.sum()*100
@@ -66,12 +66,12 @@ def _kpi_(url, first, second):
 	print('В среднем за день: ', round(np.median(df_kf.place)), 'шт')
 
 
-def _order_(url, first, second):
+def _order_(url, start_date, end_date):
 	import numpy as np
 	import pandas as pd
 	src = url
 	df = pd.read_csv(src)
-	df = df[df['date'].between(first, second)]
+	df = df[df['date'].between(start_date, end_date)]
 	mp = df.query("branch == 'MP'")[['date', 'amount', 't_c']].reset_index(drop=True).rename(columns={'amount': 'counts'}).sort_values('date', ascending=True)
 
 	kf = df.query("branch == 'KF'")[['date', 'number', 't_c']].reset_index(drop=True).sort_values('date', ascending=True)
