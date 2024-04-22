@@ -2,7 +2,7 @@ def _kpi_(url, start_date, end_date):
 	import pandas as pd
 	import numpy as np
 	src = url
-	df = pd.read_csv('files/'+src)
+	df = pd.read_csv('files/'+src+'csv')
 	df = df[df['date'].between(start_date, end_date)]
 	mp = df.query("branch == 'MP'") \
 	.groupby('date', as_index=False) \
@@ -70,7 +70,7 @@ def _order_(url, start_date, end_date):
 	import numpy as np
 	import pandas as pd
 	src = url
-	df = pd.read_csv('files/'+src)
+	df = pd.read_csv('files/'+src+'csv')
 	df = df[df['date'].between(start_date, end_date)]
 	mp = df.query("branch == 'MP'")[['date', 'amount', 't_c']].reset_index(drop=True).rename(columns={'amount': 'counts'}).sort_values('date', ascending=True)
 
@@ -80,3 +80,13 @@ def _order_(url, start_date, end_date):
 	print(mp)
 	print('*'*20, 'Купи Флакон', '*'*20)
 	print(kf)
+def _time_orders_(h, m, c):
+	h, m = map(int, input('Время начала сборки через пробел час и минута:').split())
+	c = int(input('Количество заказов:'))
+  	avg = [4.18, 4.41, 4.63]
+  	t1 = round((c * avg[2] // 60))
+	t2 = round((c * avg[2] % 60))
+	time_h = ((h + t1) + (m + t2) // 60)
+	time_m = ((m + t2) % 60)
+	print(f'Примерное время сборки: {t1} ч. {t2} мин.')
+	print(f'Примерное время окончания сборки: {time_h} ч.  {time_m} мин.')
