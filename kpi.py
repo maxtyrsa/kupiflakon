@@ -3,7 +3,7 @@ from func import _order_ #Библиотека с функциями заказ�
 from func import _time_orders_ #Библиотека примерного времени сбоки заказов
 import os
  # Указываем путь к директории
-directory = "/home/max/git/Projekt/files/"
+directory = "/workspaces/Projekt/files/"
  # Получаем список файлов
 files = os.listdir(directory)
  # Выводим список файлов
