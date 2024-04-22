@@ -10,15 +10,25 @@ files = os.listdir(directory)
 print('1 - KPI')
 print('2 - Orders')
 print('3 - Time')
-choic = input("Выберите метрику расчета: ")
-print(files)
-url = input('Введите имя файла csv: ')
-start_date = input('Введите начальную дату в формате "год-месяц-день": ')
-end_date = input('Введите конечную дату в формате "год-месяц-день": ')
+#choic = input("Выберите метрику расчета: ")
+#print(files)
+#url = input('Введите имя файла csv: ')
+#start_date = input('Введите начальную дату в формате "год-месяц-день": ')
+#end_date = input('Введите конечную дату в формате "год-месяц-день": ')
 
 if choic == '1':
     _kpi_(url, start_date, end_date) #Запуск функции KPI
+    choic = input("Выберите метрику расчета: ")
+    print(files)
+    url = input('Введите имя файла csv: ')
+    start_date = input('Введите начальную дату в формате "год-месяц-день": ')
+    end_date = input('Введите конечную дату в формате "год-месяц-день": ')
 if choic == '2':
     _order_(url, start_date, end_date) #Запуск функции заказов
+    choic = input("Выберите метрику расчета: ")
+    print(files)
+    url = input('Введите имя файла csv: ')
+    start_date = input('Введите начальную дату в формате "год-месяц-день": ')
+    end_date = input('Введите конечную дату в формате "год-месяц-день": ')
 if choic == '3':
     _time_orders_(h, m, c) #Запуск функции времени сбоки
