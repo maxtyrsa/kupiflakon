@@ -2,7 +2,7 @@ def _kpi_(url, start_date, end_date):
 	import pandas as pd
 	import numpy as np
 	src = url
-	df = pd.read_csv('files/'+src+'csv')
+	df = pd.read_csv('files/'+src+'.csv', sep=';')
 	df = df[df['date'].between(start_date, end_date)]
 	mp = df.query("branch == 'MP'") \
 	.groupby('date', as_index=False) \
@@ -70,7 +70,7 @@ def _order_(url, start_date, end_date):
 	import numpy as np
 	import pandas as pd
 	src = url
-	df = pd.read_csv('files/'+src+'csv')
+	df = pd.read_csv('files/'+src+'.csv', sep=';')
 	df = df[df['date'].between(start_date, end_date)]
 	mp = df.query("branch == 'MP'")[['date', 'amount', 't_c']].reset_index(drop=True).rename(columns={'amount': 'counts'}).sort_values('date', ascending=True)
 
@@ -80,3 +80,5 @@ def _order_(url, start_date, end_date):
 	print(mp)
 	print('*'*20, 'Купи Флакон', '*'*20)
 	print(kf)
+    mp.to_csv('mp.csv', index=False)
+	kf.to_csv('kf.csv', index=False
