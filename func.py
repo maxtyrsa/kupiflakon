@@ -80,3 +80,5 @@ def _order_(url, start_date, end_date):
 	print(mp)
 	print('*'*20, 'Купи Флакон', '*'*20)
 	print(kf)
+    mp.to_csv('mp.csv', index=False)
+	kf.to_csv('kf.csv', index=False
