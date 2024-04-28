@@ -80,6 +80,8 @@ def _order_(url, start_date, end_date):
 
 	kf = df.query("branch == 'KF'")[['date', 'number', 't_c']].reset_index(drop=True).sort_values('date', ascending=True)
 	kf.number = kf.number.astype(int)
+    mp = mp.rename(columns={'date': 'Дата', 'counts': 'Количество', 't_c': 'Компания'})
+    kf = kf.rename(columns={'date': 'Дата', 'number': 'Номер заказа', 't_c': 'Компания'})
 	print('*'*20, 'Маркетплейс', '*'*20)
 	print(mp)
 	print('*'*20, 'Купи Флакон', '*'*20)
