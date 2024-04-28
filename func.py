@@ -64,6 +64,10 @@ def _kpi_(url, start_date, end_date):
 	df_kf['percent'] = df_kf.place/df_kf.place.sum()*100
 	print(df_kf)
 	print('В среднем за день: ', round(np.median(df_kf.place)), 'шт')
+	time = [4.63]
+	t1 = round((df_mp.place.sum() * time[0] // 60))
+	t2 = round((df_mp.place.sum() * time[0] % 60))
+	print(f'Примерное время сборки: {t1} ч. {t2} мин.')
 
 
 def _order_(url, start_date, end_date):
@@ -80,5 +84,5 @@ def _order_(url, start_date, end_date):
 	print(mp)
 	print('*'*20, 'Купи Флакон', '*'*20)
 	print(kf)
-    mp.to_csv('mp.csv', index=False)
-	kf.to_csv('kf.csv', index=False
+	mp.to_csv('mp.csv', index=False)
+	kf.to_csv('kf.csv', index=False)
