@@ -76,6 +76,7 @@ COPY public.comments (date, number, comment) FROM stdin;
 --
 
 COPY public.supply (date, amount, t_c) FROM stdin;
+2024-05-14	90	OZON
 2024-05-08	180	OZON
 \.
 
@@ -846,6 +847,9 @@ COPY public.work (date, number, place, amount, t_c, branch) FROM stdin;
 2024-05-07	81804	1	1	Boxberry	KF
 2024-05-13	\N	67	67	OZON	MP
 2024-05-13	\N	4	4	Yandex Market	MP
+2024-05-14	\N	17	17	OZON	MP
+2024-05-14	\N	7	7	Yandex Market	MP
+2024-05-14	\N	1	1	AliExpress	MP
 \.
 
 
@@ -862,7 +866,7 @@ ALTER TABLE ONLY public.comments
 --
 
 GRANT SELECT ON TABLE public.supply TO maxtyrsa;
-GRANT INSERT,UPDATE ON TABLE public.supply TO PUBLIC;
+GRANT INSERT,DELETE,UPDATE ON TABLE public.supply TO PUBLIC;
 
 
 --
@@ -870,7 +874,7 @@ GRANT INSERT,UPDATE ON TABLE public.supply TO PUBLIC;
 --
 
 GRANT SELECT ON TABLE public.work TO maxtyrsa;
-GRANT INSERT,UPDATE ON TABLE public.work TO PUBLIC;
+GRANT INSERT,DELETE,UPDATE ON TABLE public.work TO PUBLIC;
 
 
 --
