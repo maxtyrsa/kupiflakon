@@ -78,6 +78,7 @@ COPY public.comments (date, number, comment) FROM stdin;
 COPY public.supply (date, amount, t_c) FROM stdin;
 2024-05-14	90	OZON
 2024-05-08	180	OZON
+2024-05-15	30	OZON
 \.
 
 
@@ -850,6 +851,8 @@ COPY public.work (date, number, place, amount, t_c, branch) FROM stdin;
 2024-05-14	\N	17	17	OZON	MP
 2024-05-14	\N	7	7	Yandex Market	MP
 2024-05-14	\N	1	1	AliExpress	MP
+2024-05-15	\N	17	17	OZON	MP
+2024-05-15	\N	7	7	Yandex Market	MP
 \.
 
 
