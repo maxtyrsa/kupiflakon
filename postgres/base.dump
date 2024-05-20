@@ -868,6 +868,8 @@ COPY public.work (date, number, place, amount, t_c, branch) FROM stdin;
 2024-05-17	81987	1	1	CDEK	KF
 2024-05-17	81943	1	1	CDEK	KF
 2024-05-17	82000	1	1	Самовывоз	KF
+2024-05-20	\N	71	71	OZON	MP
+2024-05-20	\N	10	10	Yandex Market	MP
 \.
 
 
