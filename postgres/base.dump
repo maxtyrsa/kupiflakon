@@ -82,6 +82,7 @@ COPY public.supply (date, amount, t_c) FROM stdin;
 2024-05-16	35	OZON
 2024-05-17	35	OZON
 2024-05-21	70	OZON
+2024-05-22	30	OZON
 \.
 
 
@@ -876,6 +877,10 @@ COPY public.work (date, number, place, amount, t_c, branch) FROM stdin;
 2024-05-21	82004	1	1	Почта России	KF
 2024-05-21	82014	1	1	Почта России	KF
 2024-05-21	82019	1	1	Почта России	KF
+2024-05-22	\N	29	29	OZON	MP
+2024-05-22	\N	8	8	Yandex Market	MP
+2024-05-23	230524	11	1	Бийск	KF
+2024-05-23	\N	25	25	OZON	MP
 \.
 
 
