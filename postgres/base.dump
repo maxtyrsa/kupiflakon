@@ -886,6 +886,9 @@ COPY public.work (date, number, place, amount, t_c, branch) FROM stdin;
 2024-05-24	82055	1	1	CDEK	KF
 2024-05-24	\N	28	28	OZON	MP
 2024-05-24	\N	6	6	Yandex Market	MP
+2024-05-27	\N	64	64	OZON	MP
+2024-05-27	\N	5	5	Yandex Market	MP
+2024-05-27	\N	1	1	Mega Market	MP
 \.
 
 
