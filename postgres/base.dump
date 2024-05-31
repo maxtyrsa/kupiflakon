@@ -68,6 +68,7 @@ ALTER TABLE public.work OWNER TO u0_a448;
 
 COPY public.comments (date, number, comment) FROM stdin;
 2024-04-04	77683	Обмен
+2024-05-31	78189	210 пипеток 11151
 \.
 
 
@@ -903,6 +904,13 @@ COPY public.work (date, number, place, amount, t_c, branch) FROM stdin;
 2024-05-30	82147	1	1	DPD	KF
 2024-05-30	\N	1	1	Mega Market	MP
 2024-05-30	\N	3	3	Yandex Market	MP
+2024-05-31	\N	18	18	OZON	MP
+2024-05-31	78189	1	1	CDEK	KF
+2024-05-31	82109	1	1	Boxberry	KF
+2024-05-31	82154	1	1	Boxberry	KF
+2024-05-31	82155	1	1	Boxberry	KF
+2024-05-31	82157	1	1	Boxberry	KF
+2024-05-31	82124	1	1	Boxberry	KF
 \.
 
 
