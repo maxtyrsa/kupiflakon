@@ -881,6 +881,7 @@ COPY public.work (date, number, place, amount, t_c, branch) FROM stdin;
 2024-05-21	82014	1	1	Почта России	KF
 2024-05-21	82019	1	1	Почта России	KF
 2024-05-22	\N	29	29	OZON	MP
+2024-06-03	\N	55	55	OZON	MP
 2024-05-22	\N	8	8	Yandex Market	MP
 2024-05-23	230524	11	1	Бийск	KF
 2024-05-23	\N	25	25	OZON	MP
@@ -911,6 +912,8 @@ COPY public.work (date, number, place, amount, t_c, branch) FROM stdin;
 2024-05-31	82155	1	1	Boxberry	KF
 2024-05-31	82157	1	1	Boxberry	KF
 2024-05-31	82124	1	1	Boxberry	KF
+2024-06-03	\N	5	5	Yandex Market	MP
+2024-06-03	\N	74	74	Wildberries	MP
 \.
 
 
