@@ -450,13 +450,6 @@ COPY public.work (date, number, place, amount, t_c, branch) FROM stdin;
 2024-03-01	80401	1	1	CDEK	KF
 2024-03-01	\N	46	46	OZON	MP
 2024-03-01	\N	3	3	Yandex Market	MP
-2024-03-03	80392	1	1	DPD	KF
-2024-03-03	\N	80	80	OZON	MP
-2024-03-03	\N	24	24	Wildberries	MP
-2024-03-04	80308	1	1	CDEK	KF
-2024-03-04	\N	57	57	OZON	MP
-2024-03-04	\N	4	4	Yandex Market	MP
-2024-03-04	\N	1	1	AliExpress	MP
 2024-03-06	80250	1	1	CDEK	KF
 2024-03-06	\N	31	31	OZON	MP
 2024-03-06	80473	5	1	DPD	KF
@@ -525,6 +518,12 @@ COPY public.work (date, number, place, amount, t_c, branch) FROM stdin;
 2024-04-01	\N	42	42	Wildberries	MP
 2024-04-02	\N	49	49	OZON	MP
 2024-04-02	\N	12	12	Yandex Market	MP
+2024-03-04	80392	1	1	DPD	KF
+2024-03-04	\N	80	80	OZON	MP
+2024-03-05	80308	1	1	CDEK	KF
+2024-03-05	\N	57	57	OZON	MP
+2024-03-05	\N	4	4	Yandex Market	MP
+2024-03-05	\N	1	1	AliExpress	MP
 2024-04-02	81201	1	1	Boxberry	KF
 2024-03-19	\N	1	1	Mega Market	MP
 2024-02-29	\N	1	1	Ярмарка Мастеров	MP
@@ -937,6 +936,7 @@ COPY public.work (date, number, place, amount, t_c, branch) FROM stdin;
 2024-06-07	82264	1	1	Boxberry	KF
 2024-06-07	82267	1	1	Boxberry	KF
 2024-06-07	82251	1	1	DPD	KF
+2024-03-04	\N	24	24	Wildberries	MP
 \.
 
 
