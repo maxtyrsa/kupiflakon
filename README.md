@@ -1,1 +1,1 @@
-![alt text](https://drive.google.com/file/d/1S1OrX_GbBihAvAqc3TjXsIoF72L9UUhP/view?usp=drivesdk)
+![2024](https://github.com/maxtyrsa/Projekt/blob/main/2024.png)
