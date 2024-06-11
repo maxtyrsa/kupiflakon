@@ -1,11 +1,13 @@
 from datetime import datetime
-
 x = int(input("Количество заказов: "))
 list = []
 for i in range(x):
 	d = datetime.now().strftime('%Y-%m-%d')
-	print("""NULL - для MP""")
 	n = input("Номер заказа: ")
+	num = (range(0, 100000))
+	numb = num[int(n)]
+	if numb == 0:
+		numb = "'NULL'"
 	p = input("Места: ")
 	a = input("Количество: ")
 	print("""Выберите ТК:
@@ -33,7 +35,7 @@ for i in range(x):
 	b = input("Branch: ")
 	ones2 = [' ', 'MP', 'KF']
 	word1 = ones2[int(b)]
-	list.append(f"('{d}', {n}, {p}, {a}, '{word}', '{word1}'),")
+	list.append(f"('{d}', {numb}, {p}, {a}, '{word}', '{word1}'),")
 	print("""INSERT INTO
     work (date, number, place, amount, t_c, branch)
 VALUES""")
