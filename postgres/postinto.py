@@ -7,7 +7,7 @@ for i in range(x):
 	num = (range(0, 100000))
 	numb = num[int(n)]
 	if numb == 0:
-		numb = "'NULL'"
+		numb = 'NULL'
 	p = input("Места: ")
 	a = input("Количество: ")
 	print("""Выберите ТК:
