@@ -950,6 +950,8 @@ COPY public.work (date, number, place, amount, t_c, branch) FROM stdin;
 2024-06-11	82212	1	1	CDEK	KF
 2024-06-11	82283	2	1	CDEK	KF
 2024-06-11	82302	1	1	CDEK	KF
+2024-06-11	82296	1	1	CDEK	KF
+2024-06-11	82256	1	1	CDEK	KF
 \.
 
 
