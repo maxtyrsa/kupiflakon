@@ -1,7 +1,10 @@
 Экспорт в csv из postgresql
 
+
 \copy work to 'git/kupiflakon/files/work.csv' delimiter ';' csv header;
 
+
 \copy supply to 'git/kupiflakon/files/supply.csv' delimiter ';' csv header;
+
 
 pg_dump mydb > git/kupiflakon/postgres/base.dump
