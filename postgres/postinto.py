@@ -9,7 +9,6 @@ for i in range(x):
 	p = input("Места: ")
 	a = input("Количество: ")
 	print("""Выберите ТК:
-	0 - NULL
 	1 - Boxberry
 	2 - ПЭК
 	3 - Самовывоз
@@ -26,13 +25,13 @@ for i in range(x):
 	14 - DPD
 	15 - Бийск""")
 	t = int(input("TK: "))
-	ones = ['NULL',  'Boxberry', 'ПЭК', 'Самовывоз', 'Деловые линии', 'Почта России', 'Yandex Market', 'Mega Market', 'AliExpress', 'Образцы', 'OZON', 'Ярмарка Мастеров', 'CDEK', 'Wildberries', 'DPD', 'Бийск']
+	ones = [' ',  'Boxberry', 'ПЭК', 'Самовывоз', 'Деловые линии', 'Почта России', 'Yandex Market', 'Mega Market', 'AliExpress', 'Образцы', 'OZON', 'Ярмарка Мастеров', 'CDEK', 'Wildberries', 'DPD', 'Бийск']
 	word = ones[int(t)]
 	print("""Выберите подразделение:
-	0 - MP
-	1 - KF""")
+	1 - MP
+	2 - KF""")
 	b = input("Branch: ")
-	ones2 = ['MP', 'KF']
+	ones2 = [' ', 'MP', 'KF']
 	word1 = ones2[int(b)]
 	list.append(f"('{d}', {n}, {p}, {a}, '{word}', '{word1}'),")
 	print("""INSERT INTO
