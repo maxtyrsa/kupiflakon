@@ -2,7 +2,7 @@ from func import _kpi_ #Библиотека с функциями KPI
 from func import _order_ #Библиотека с функциями заказов
 import os
  # Указываем путь к директории
-directory = "/workspaces/Projekt/files/"
+directory = "/workspaces/kupiflakon/files/"
  # Получаем список файлов
 files = os.listdir(directory)
  # Выводим список файлов
