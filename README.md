@@ -26,3 +26,12 @@
 
 ![Marketplace_diagram](https://github.com/maxtyrsa/kupiflakon/blob/main/dashbord/Маркетплейс%20проценты-13.06.2024,%2000_16_50.png?raw=true) ![Kupiflakon_diagram](https://github.com/maxtyrsa/kupiflakon/blob/main/dashbord/Купи-Флакон%20проценты-13.06.2024,%2000_18_24.png?raw=true)
 
+Коэфициэнт эфективности сотрудника. Расчитываеться медиана от общего количества собраных заказов за данный период с групировкой по дням. Данное значение умнодаеться на количество рабочих дней в месяце и делиться на 3 сегмента (Bad, Good, Super).
+
+![kpi_march](https://github.com/maxtyrsa/kupiflakon/blob/main/dashbord/Март-12.06.2024,%2023_49_50.png?raw=true)
+
+![kpi_april](https://github.com/maxtyrsa/kupiflakon/blob/main/dashbord/Апрель-12.06.2024,%2023_50_00.png?raw=true)
+
+![kpi_mai](https://github.com/maxtyrsa/kupiflakon/blob/main/dashbord/Май-12.06.2024,%2023_50_11.png?raw=true)
+
+![kpi_juni](https://github.com/maxtyrsa/kupiflakon/blob/main/dashbord/KPI%20Июнь-12.06.2024,%2023_50_26.png?raw=true)
