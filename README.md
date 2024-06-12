@@ -35,25 +35,25 @@
 Коэфициэнт эфективности сотрудника. Расчитываеться медиана от общего количества собраных заказов за данный период с групировкой по дням. Данное значение умнодаеться на количество рабочих дней в месяце и делиться на 3 сегмента (Bad, Good, Super).
 
 
-<p align="center"> Март </p>
+Март
                          
 
 ![kpi_march](https://github.com/maxtyrsa/kupiflakon/blob/main/dashbord/Март-12.06.2024,%2023_49_50.png?raw=true)
 
 
-<align="center">Апрель<a
+Апрель
                          
 
 ![kpi_april](https://github.com/maxtyrsa/kupiflakon/blob/main/dashbord/Апрель-12.06.2024,%2023_50_00.png?raw=true)
 
 
-<align="center">Май<a
+Май
 
 
 ![kpi_mai](https://github.com/maxtyrsa/kupiflakon/blob/main/dashbord/Май-12.06.2024,%2023_50_11.png?raw=true)
 
 
-<align="center">Июнь<a
+Июнь
 
 
 ![kpi_juni](https://github.com/maxtyrsa/kupiflakon/blob/main/dashbord/KPI%20Июнь-12.06.2024,%2023_50_26.png?raw=true)
