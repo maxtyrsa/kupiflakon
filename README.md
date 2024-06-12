@@ -1,16 +1,14 @@
-<h3>Kupi-Flakon</h3>
+<h3>Купи-Флакон</h3>
 
+Этот проект Kupi-Flakon обладает большим потенциалом для оптимизации процессов и повышения операционной эффективности. Анализ количества собранных заказов позволяет определить пиковое рабочее время и более эффективно распределять ресурсы. Расчет коэффициента эффективности сотрудника помогает выявить слабые места в работе персонала и принять меры по их улучшению.
 
-This Kupi-Flakon project has great potential for optimizing processes and increasing operational efficiency.  Analyzing the number of collected orders allows you to identify peak operating times and allocate resources more efficiently. Calculating an employee's performance coefficient helps to identify weaknesses in the work of personnel and take measures to improve them.
+Анализ показателей среднего количества заказов за определенный период времени позволяет выявить тенденции и изменения спроса на товары. Это помогает оптимизировать запасы и более эффективно управлять производственным процессом. Анализ показателей по дням недели также позволяет оптимизировать график работы и распределение задач между сотрудниками, исходя из пиковой нагрузки в определенные дни.
 
-Researching metrics on the average number of orders over a certain period of time allows you to identify trends and changes in demand for goods. This helps you optimize inventory and manage your production process more efficiently.  Analyzing metrics by day of the week also allows you to optimize the work schedule and distribution of tasks between employees, based on peak load on certain days.
+Внедрение автоматизированных систем учета и анализа данных в проекте Kupi-Flakon значительно упрощает процесс принятия управленческих решений и позволяет оперативно реагировать на изменения рыночных условий. Использование современных технологий аналитики помогает повысить эффективность работы интернет-магазина и улучшить качество обслуживания клиентов.
 
-The introduction of automated accounting and data analysis systems in the Kupi-Flakon project significantly simplifies the process of making management decisions and allows you to quickly respond to changes in market conditions. The use of modern analytics technologies helps to increase the efficiency of an online store and improve the quality of customer service.
+<h3>Информационная панель</h3>
 
-<h3>Dashboard</h3>
-
-
-Data for 2024
+Данные за 2024
 
 
 ![2024](https://github.com/maxtyrsa/Projekt/blob/main/2024.jpg)
