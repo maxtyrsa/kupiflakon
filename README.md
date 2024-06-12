@@ -10,6 +10,7 @@
 
 Данные за 2024
 
+Показывает тенденцию изменения количества заказов определенных компаний за период с Марта по Июнь.
 
 ![Marketplace_lineplot](https://github.com/maxtyrsa/kupiflakon/blob/main/dashbord/Маркетплейс-12.06.2024,%2023_48_10.png?raw=true)
 
