@@ -20,3 +20,9 @@
 По заказам с Сайта найболее загружена Среда, найменее загружен Понедельник. Суббота и Воскресенье так же не включены в расчет.
 
 ![Marketplace_barplot](https://github.com/maxtyrsa/kupiflakon/blob/main/dashbord/День%20MP-12.06.2024,%2023_49_04.png?raw=true) ![Kupiflakon_barplot](https://github.com/maxtyrsa/kupiflakon/blob/main/dashbord/День%20Купи-Флакон-12.06.2024,%2023_49_18.png?raw=true)
+
+Процент количества заказов определенных компаний в подразделении Маркетплейс больше всего заказо у компании Ozon - 80.5%
+По заказам с Сайта больше всего заказов у компании CDEK - 54.9%
+
+![Marketplace_diagram](https://github.com/maxtyrsa/kupiflakon/blob/main/dashbord/Маркетплейс%20проценты-13.06.2024,%2000_16_50.png?raw=true) ![Kupiflakon_diagram](https://github.com/maxtyrsa/kupiflakon/blob/main/dashbord/Купи-Флакон%20проценты-13.06.2024,%2000_18_24.png?raw=true)
+
