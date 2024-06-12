@@ -20,5 +20,3 @@
 По заказам с Сайта найболее загружена Среда, найменее загружен Понедельник. Суббота и Воскресенье так же не включены в расчет.
 
 ![Marketplace_barplot](https://github.com/maxtyrsa/kupiflakon/blob/main/dashbord/День%20MP-12.06.2024,%2023_49_04.png?raw=true) ![Kupiflakon_barplot](https://github.com/maxtyrsa/kupiflakon/blob/main/dashbord/День%20Купи-Флакон-12.06.2024,%2023_49_18.png?raw=true)
-
-![Kupiflakon_barplot](https://github.com/maxtyrsa/kupiflakon/blob/main/dashbord/День%20Купи-Флакон-12.06.2024,%2023_49_18.png?raw=true)
