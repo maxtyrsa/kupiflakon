@@ -8,5 +8,9 @@ Researching metrics on the average number of orders over a certain period of tim
 The introduction of automated accounting and data analysis systems in the Kupi-Flakon project significantly simplifies the process of making management decisions and allows you to quickly respond to changes in market conditions. The use of modern analytics technologies helps to increase the efficiency of an online store and improve the quality of customer service.
 
 <h3>Dashboard</h3>
-<h1>Data for 2024</h1>
+
+
+<h5>Data for 2024</h5>
+
+
 ![2024](https://github.com/maxtyrsa/Projekt/blob/main/2024.jpg)
