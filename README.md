@@ -19,6 +19,6 @@
 Количество заказов по дням за период с Марта по Июнь. На данном графике видно что в подразделении Маркетплейс найболее загруженый день Понедельник, найменее загружена Среда. Суббота и Воскресенье не включены в расчет т.к сборка заказов в эти дни была единоразовой.
 По заказам с Сайта найболее загружена Среда, найменее загружен Понедельник. Суббота и Воскресенье так же не включены в расчет.
 
-![Marketplace_barplot](https://github.com/maxtyrsa/kupiflakon/blob/main/dashbord/День%20MP-12.06.2024,%2023_49_04.png?raw=true)
+![Marketplace_barplot](https://github.com/maxtyrsa/kupiflakon/blob/main/dashbord/День%20MP-12.06.2024,%2023_49_04.png?raw=true) ![Kupiflakon_barplot](https://github.com/maxtyrsa/kupiflakon/blob/main/dashbord/День%20Купи-Флакон-12.06.2024,%2023_49_18.png?raw=true)
 
 ![Kupiflakon_barplot](https://github.com/maxtyrsa/kupiflakon/blob/main/dashbord/День%20Купи-Флакон-12.06.2024,%2023_49_18.png?raw=true)
