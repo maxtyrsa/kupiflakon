@@ -27,15 +27,15 @@ for i in range(x):
 	14 - DPD
 	15 - Бийск""")
 	t = int(input("TK: "))
-	ones = [' ',  'Boxberry', 'ПЭК', 'Самовывоз', 'Деловые линии', 'Почта России', 'Yandex Market', 'Mega Market', 'AliExpress', 'Образцы', 'OZON', 'Ярмарка Мастеров', 'CDEK', 'Wildberries', 'DPD', 'Бийск']
-	word = ones[int(t)]
+	list_tk = [' ',  'Boxberry', 'ПЭК', 'Самовывоз', 'Деловые линии', 'Почта России', 'Yandex Market', 'Mega Market', 'AliExpress', 'Образцы', 'OZON', 'Ярмарка Мастеров', 'CDEK', 'Wildberries', 'DPD', 'Бийск']
+	tk = list_tk[int(t)]
 	print("""Выберите подразделение:
 	1 - MP
 	2 - KF""")
 	b = input("Branch: ")
-	ones2 = [' ', 'MP', 'KF']
-	word1 = ones2[int(b)]
-	list.append(f"('{d}', {numb}, {p}, {a}, '{word}', '{word1}'),")
+	company = [' ', 'MP', 'KF']
+	branch = company[int(b)]
+	list.append(f"('{d}', {numb}, {p}, {a}, '{tk}', '{branch}'),")
 	print("""INSERT INTO
     work (date, number, place, amount, t_c, branch)
 VALUES""")
