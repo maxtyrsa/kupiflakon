@@ -13,4 +13,4 @@
 
 ![Marketplace_lineplot](dashbord/Маркетплейс-12.06.2024, 23_48_10.png)
 
-![Kupiflakon_lineplot](dashbord/Купи-Флакон-12.06.2024, 23_48_49.png)
+![Kupiflakon_lineplot](https://github.com/maxtyrsa/kupiflakon/blob/main/dashbord/Купи-Флакон-12.06.2024,%2023_48_49.png?raw=true)
