@@ -37,7 +37,7 @@ for i in range(x):
 	branch = company[int(b)]
 	list.append(f"('{d}', {numb}, {p}, {a}, '{tk}', '{branch}'),")
 	print("""INSERT INTO
-    work (date, number, place, amount, t_c, branch)
+    kupiflakon (date, number, place, amount, t_c, branch)
 VALUES""")
 	print(*[item + '\n' for item in list])
 	continue

@@ -21,4 +21,4 @@ print("""Выберите ТК:
 t = int(input("ТК: "))
 ones = [' ',  'Boxberry', 'ПЭК', 'Самовывоз', 'Деловые линии', 'Почта России', 'Yandex Market', 'Mega Market', 'AliExpress', 'Образцы', 'OZON', 'Ярмарка Мастеров', 'CDEK', 'Wildberries', 'DPD', 'Бийск']
 word = ones[int(t)]
-print(f"UPDATE work SET place = {p}, amount = {a} WHERE date = '{d}' and t_c = '{word}';")
+print(f"UPDATE kupiflakon SET place = {p}, amount = {a} WHERE date = '{d}' and t_c = '{word}';")
