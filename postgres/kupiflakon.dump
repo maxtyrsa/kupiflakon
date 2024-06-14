@@ -888,7 +888,6 @@ COPY public.kupiflakon (id, date, number, place, t_c, branch) FROM stdin;
 859	2024-06-11	82256	1	CDEK	KF
 861	2024-06-13	\N	11	Yandex Market	MP
 862	2024-06-13	82300	1	CDEK	KF
-864	2024-06-14	\N	1	Yandex Market	MP
 12	2024-01-10	\N	11	OZON_FBS	MP
 28	2024-01-11	\N	1	OZON_FBS	MP
 46	2024-01-14	\N	6	OZON_FBS	MP
@@ -921,6 +920,7 @@ COPY public.kupiflakon (id, date, number, place, t_c, branch) FROM stdin;
 820	2024-06-03	\N	74	WB_FBS	MP
 835	2024-06-06	\N	57	WB_FBS	MP
 844	2024-03-04	\N	24	WB_FBS	MP
+864	2024-06-14	\N	4	Yandex Market	MP
 427	2024-03-04	\N	80	OZON_FBS	MP
 429	2024-03-05	\N	57	OZON_FBS	MP
 459	2024-04-03	\N	52	OZON_FBS	MP
