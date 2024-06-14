@@ -1,6 +1,5 @@
 from datetime import datetime
-p = input("Места: ")
-a = input("Количество: ")
+p = input("Количество: ")
 d = datetime.now().strftime('%Y-%m-%d')
 print("""Выберите ТК:
 	1 - Boxberry
@@ -21,4 +20,4 @@ print("""Выберите ТК:
 t = int(input("ТК: "))
 ones = [' ',  'Boxberry', 'ПЭК', 'Самовывоз', 'Деловые линии', 'Почта России', 'Yandex Market', 'Mega Market', 'AliExpress', 'Образцы', 'OZON', 'Ярмарка Мастеров', 'CDEK', 'Wildberries', 'DPD', 'Бийск']
 word = ones[int(t)]
-print(f"UPDATE kupiflakon SET place = {p}, amount = {a} WHERE date = '{d}' and t_c = '{word}';")
+print(f"UPDATE kupiflakon SET place = {p} WHERE date = '{d}' and t_c = '{word}';")

@@ -8,8 +8,7 @@ for i in range(x):
 	numb = num[int(n)]
 	if numb == 0:
 		numb = 'NULL'
-	p = input("Места: ")
-	a = input("Количество: ")
+	p = input("Количество: ")
 	print("""Выберите ТК:
 	1 - Boxberry
 	2 - ПЭК
@@ -35,9 +34,9 @@ for i in range(x):
 	b = input("Branch: ")
 	company = [' ', 'MP', 'KF']
 	branch = company[int(b)]
-	list.append(f"('{d}', {numb}, {p}, {a}, '{tk}', '{branch}'),")
+	list.append(f"('{d}', {numb}, {p}, '{tk}', '{branch}'),")
 	print("""INSERT INTO
-    kupiflakon (date, number, place, amount, t_c, branch)
+    kupiflakon (date, number, place, t_c, branch)
 VALUES""")
 	print(*[item + '\n' for item in list])
 	continue

@@ -80,7 +80,7 @@ def _order_(url, start_date, end_date):
 	src = url
 	df = pd.read_csv('files/'+src+'.csv', sep=';')
 	df = df[df['date'].between(start_date, end_date)]
-	mp = df.query("branch == 'MP'")[['date', 'amount', 't_c']].reset_index(drop=True).rename(columns={'amount': 'counts'}).sort_values('date', ascending=True)
+	mp = df.query("branch == 'MP'")[['date', 'place', 't_c']].reset_index(drop=True).rename(columns={'place': 'counts'}).sort_values('date', ascending=True)
 
 	kf = df.query("branch == 'KF'")[['date', 'number', 't_c']].reset_index(drop=True).sort_values('date', ascending=True)
 	kf.number = kf.number.astype(int)
