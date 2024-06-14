@@ -1,5 +1,5 @@
 from datetime import datetime
-x = int(input())
+x = int(input("Количество заказов: ))
 list = []
 for i in range(x):
 	i = input("Введите id: ")
