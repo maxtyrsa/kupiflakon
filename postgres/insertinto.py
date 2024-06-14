@@ -9,28 +9,35 @@ for i in range(x):
 	if numb == 0:
 		numb = 'NULL'
 	p = input("Количество: ")
-	print("""Выберите ТК:
-	1 - Boxberry
-	2 - ПЭК
-	3 - Самовывоз
-	4 - Деловые линии
-	5 - Почта России
-	6 - Yandex Market
-	7 - Mega Market
-	8 - AliExpress
-	9 - Образцы
-	10 - OZON
-	11 - Ярмарка Мастеров
-	12 - CDEK
-	13 - Wildberries
-	14 - DPD
-	15 - Бийск""")
+	print("""
+Выберите ТК:
+1 - Boxberry
+2 - ПЭК
+3 - Самовывоз
+4 - Деловые линии
+5 - Почта России
+6 - Yandex Market
+7 - Mega Market
+8 - AliExpress
+9 - Образцы
+10 - OZON_FBS
+11 - Ярмарка Мастеров
+12 - CDEK
+13 - WB_FBS
+14 - DPD
+15 - Бийск
+--------------
+16 - OZON_FBO
+17 - WB_FBO
+       """)
 	t = int(input("TK: "))
-	list_tk = [' ',  'Boxberry', 'ПЭК', 'Самовывоз', 'Деловые линии', 'Почта России', 'Yandex Market', 'Mega Market', 'AliExpress', 'Образцы', 'OZON', 'Ярмарка Мастеров', 'CDEK', 'Wildberries', 'DPD', 'Бийск']
+	list_tk = [' ',  'Boxberry', 'ПЭК', 'Самовывоз', 'Деловые линии', 'Почта России', 'Yandex Market', 'Mega Market', 'AliExpress', 'Образцы', 'OZON_FBS', 'Ярмарка Мастеров', 'CDEK', 'WB_FBS', 'DPD', 'Бийск', 'OZON_FBO', 'WB_FBO']
 	tk = list_tk[int(t)]
-	print("""Выберите подразделение:
-	1 - MP
-	2 - KF""")
+	print("""
+Выберите подразделение:
+1 - MP
+2 - KF
+       """)
 	b = input("Branch: ")
 	company = [' ', 'MP', 'KF']
 	branch = company[int(b)]
