@@ -9,7 +9,7 @@ def intokf():
 	    numb = num[int(n)]
 	    if numb == 0:
 		    numb = 'NULL'
-	    p = input("Количество: ")
+	    p = input("Количество мест: ")
 	    print("""
 Выберите ТК:
 1 - Boxberry
@@ -54,12 +54,7 @@ def update():
     x = int(input("Количество заказов: "))
     for i in range(x):
 	    d = datetime.now().strftime('%Y-%m-%d')
-	    p = int(input("Количество: "))
-	    n = input("Номер заказа: ")
-	    num = (range(0, 100000))
-	    numb = num[int(n)]
-	    if numb == 0:
-		    numb = 'NULL'
+	    p = int(input("Количество мест: "))
     d = datetime.now().strftime('%Y-%m-%d')
     print("""Выберите ТК:
         1 - Boxberry
@@ -80,7 +75,7 @@ def update():
     t = int(input("ТК: "))
     ones = [' ',  'Boxberry', 'ПЭК', 'Самовывоз', 'Деловые линии', 'Почта России', 'Yandex Market', 'Mega Market', 'AliExpress', 'Образцы', 'OZON', 'Ярмарка Мастеров', 'CDEK', 'Wildberries', 'DPD', 'Бийск']
     word = ones[int(t)]
-    print(f"UPDATE kupiflakon SET place = {p} WHERE date = '{d}' and t_c = '{word}' and number = {numb};")
+    print(f"UPDATE kupiflakon SET place = {p} WHERE date = '{d}' and t_c = '{word}';")
 
 def jambs():
 	from datetime import datetime
@@ -88,7 +83,7 @@ def jambs():
 	list = []
 	for i in range(x):
 		i = input("Введите id: ")
-		p = input("Количество: ")
+		p = input("Количество мест: ")
 		d = datetime.now().strftime('%Y-%m-%d')
 		print("""Выберите статус:
 1 - Ошибка
@@ -111,7 +106,7 @@ def repeated():
 	list = []
 	for i in range(x):
 		i = input("Введите id: ")
-		p = input("Количество: ")
+		p = input("Количество мест: ")
 		d = datetime.now().strftime('%Y-%m-%d')
 		print("""Выберите статус:
 1 - Повтор

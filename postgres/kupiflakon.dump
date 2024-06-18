@@ -73,6 +73,18 @@ ALTER SEQUENCE public.kupiflakon_id_seq OWNED BY public.kupiflakon.id;
 
 
 --
+-- Name: money; Type: TABLE; Schema: public; Owner: u0_a448
+--
+
+CREATE TABLE public.money (
+    id integer NOT NULL,
+    amount numeric
+);
+
+
+ALTER TABLE public.money OWNER TO u0_a448;
+
+--
 -- Name: repeated; Type: TABLE; Schema: public; Owner: u0_a448
 --
 
@@ -989,6 +1001,19 @@ COPY public.kupiflakon (id, date, number, place, t_c, branch) FROM stdin;
 881	2024-06-17	\N	45	OZON_FBS	MP
 882	2024-06-17	\N	1	Yandex Market	MP
 883	2024-06-17	\N	54	WB_FBS	MP
+884	2024-06-18	82390	1	Самовывоз	KF
+886	2024-06-18	\N	17	OZON_FBS	MP
+885	2024-06-18	\N	14	Yandex Market	MP
+\.
+
+
+--
+-- Data for Name: money; Type: TABLE DATA; Schema: public; Owner: u0_a448
+--
+
+COPY public.money (id, amount) FROM stdin;
+884	667
+886	14247
 \.
 
 
@@ -1005,7 +1030,7 @@ COPY public.repeated (id, repeat, place, date) FROM stdin;
 -- Name: kupiflakon_id_seq; Type: SEQUENCE SET; Schema: public; Owner: u0_a448
 --
 
-SELECT pg_catalog.setval('public.kupiflakon_id_seq', 883, true);
+SELECT pg_catalog.setval('public.kupiflakon_id_seq', 886, true);
 
 
 --
@@ -1022,6 +1047,14 @@ ALTER TABLE ONLY public.jambs
 
 ALTER TABLE ONLY public.kupiflakon
     ADD CONSTRAINT kupiflakon_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: money money_pkey; Type: CONSTRAINT; Schema: public; Owner: u0_a448
+--
+
+ALTER TABLE ONLY public.money
+    ADD CONSTRAINT money_pkey PRIMARY KEY (id);
 
 
 --
