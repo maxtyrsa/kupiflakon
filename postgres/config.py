@@ -51,7 +51,15 @@ VALUES""")
 
 def update():
     from datetime import datetime
-    p = input("Количество: ")
+    x = int(input("Количество заказов: "))
+    for i in range(x):
+	    d = datetime.now().strftime('%Y-%m-%d')
+	    p = int(input("Количество: "))
+	    n = input("Номер заказа: ")
+	    num = (range(0, 100000))
+	    numb = num[int(n)]
+	    if numb == 0:
+		    numb = 'NULL'
     d = datetime.now().strftime('%Y-%m-%d')
     print("""Выберите ТК:
         1 - Boxberry
@@ -72,7 +80,7 @@ def update():
     t = int(input("ТК: "))
     ones = [' ',  'Boxberry', 'ПЭК', 'Самовывоз', 'Деловые линии', 'Почта России', 'Yandex Market', 'Mega Market', 'AliExpress', 'Образцы', 'OZON', 'Ярмарка Мастеров', 'CDEK', 'Wildberries', 'DPD', 'Бийск']
     word = ones[int(t)]
-    print(f"UPDATE kupiflakon SET place = {p} WHERE date = '{d}' and t_c = '{word}';")
+    print(f"UPDATE kupiflakon SET place = {p} WHERE date = '{d}' and t_c = '{word}' and number = {numb};")
 
 def jambs():
 	from datetime import datetime
