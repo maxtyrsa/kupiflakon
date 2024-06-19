@@ -9,7 +9,7 @@ def intokf():
 	    numb = num[int(n)]
 	    if numb == 0:
 		    numb = 'NULL'
-	    p = input("Количество: ")
+	    p = input("Количество мест: ")
 	    print("""
 Выберите ТК:
 1 - Boxberry
@@ -51,7 +51,10 @@ VALUES""")
 
 def update():
     from datetime import datetime
-    p = input("Количество: ")
+    x = int(input("Количество заказов: "))
+    for i in range(x):
+	    d = datetime.now().strftime('%Y-%m-%d')
+	    p = int(input("Количество мест: "))
     d = datetime.now().strftime('%Y-%m-%d')
     print("""Выберите ТК:
         1 - Boxberry
@@ -80,7 +83,7 @@ def jambs():
 	list = []
 	for i in range(x):
 		i = input("Введите id: ")
-		p = input("Количество: ")
+		p = input("Количество мест: ")
 		d = datetime.now().strftime('%Y-%m-%d')
 		print("""Выберите статус:
 1 - Ошибка
@@ -103,7 +106,7 @@ def repeated():
 	list = []
 	for i in range(x):
 		i = input("Введите id: ")
-		p = input("Количество: ")
+		p = input("Количество мест: ")
 		d = datetime.now().strftime('%Y-%m-%d')
 		print("""Выберите статус:
 1 - Повтор

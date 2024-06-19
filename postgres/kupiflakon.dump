@@ -21,7 +21,7 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: jambs; Type: TABLE; Schema: public; Owner: u0_a448
+-- Name: jambs; Type: TABLE; Schema: public; Owner: u0_a521
 --
 
 CREATE TABLE public.jambs (
@@ -32,10 +32,10 @@ CREATE TABLE public.jambs (
 );
 
 
-ALTER TABLE public.jambs OWNER TO u0_a448;
+ALTER TABLE public.jambs OWNER TO u0_a521;
 
 --
--- Name: kupiflakon; Type: TABLE; Schema: public; Owner: u0_a448
+-- Name: kupiflakon; Type: TABLE; Schema: public; Owner: u0_a521
 --
 
 CREATE TABLE public.kupiflakon (
@@ -48,10 +48,10 @@ CREATE TABLE public.kupiflakon (
 );
 
 
-ALTER TABLE public.kupiflakon OWNER TO u0_a448;
+ALTER TABLE public.kupiflakon OWNER TO u0_a521;
 
 --
--- Name: kupiflakon_id_seq; Type: SEQUENCE; Schema: public; Owner: u0_a448
+-- Name: kupiflakon_id_seq; Type: SEQUENCE; Schema: public; Owner: u0_a521
 --
 
 CREATE SEQUENCE public.kupiflakon_id_seq
@@ -63,17 +63,29 @@ CREATE SEQUENCE public.kupiflakon_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.kupiflakon_id_seq OWNER TO u0_a448;
+ALTER SEQUENCE public.kupiflakon_id_seq OWNER TO u0_a521;
 
 --
--- Name: kupiflakon_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: u0_a448
+-- Name: kupiflakon_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: u0_a521
 --
 
 ALTER SEQUENCE public.kupiflakon_id_seq OWNED BY public.kupiflakon.id;
 
 
 --
--- Name: repeated; Type: TABLE; Schema: public; Owner: u0_a448
+-- Name: money; Type: TABLE; Schema: public; Owner: u0_a521
+--
+
+CREATE TABLE public.money (
+    id integer NOT NULL,
+    amount numeric
+);
+
+
+ALTER TABLE public.money OWNER TO u0_a521;
+
+--
+-- Name: repeated; Type: TABLE; Schema: public; Owner: u0_a521
 --
 
 CREATE TABLE public.repeated (
@@ -84,17 +96,17 @@ CREATE TABLE public.repeated (
 );
 
 
-ALTER TABLE public.repeated OWNER TO u0_a448;
+ALTER TABLE public.repeated OWNER TO u0_a521;
 
 --
--- Name: kupiflakon id; Type: DEFAULT; Schema: public; Owner: u0_a448
+-- Name: kupiflakon id; Type: DEFAULT; Schema: public; Owner: u0_a521
 --
 
 ALTER TABLE ONLY public.kupiflakon ALTER COLUMN id SET DEFAULT nextval('public.kupiflakon_id_seq'::regclass);
 
 
 --
--- Data for Name: jambs; Type: TABLE DATA; Schema: public; Owner: u0_a448
+-- Data for Name: jambs; Type: TABLE DATA; Schema: public; Owner: u0_a521
 --
 
 COPY public.jambs (id, jamb, place, date) FROM stdin;
@@ -103,7 +115,7 @@ COPY public.jambs (id, jamb, place, date) FROM stdin;
 
 
 --
--- Data for Name: kupiflakon; Type: TABLE DATA; Schema: public; Owner: u0_a448
+-- Data for Name: kupiflakon; Type: TABLE DATA; Schema: public; Owner: u0_a521
 --
 
 COPY public.kupiflakon (id, date, number, place, t_c, branch) FROM stdin;
@@ -989,11 +1001,35 @@ COPY public.kupiflakon (id, date, number, place, t_c, branch) FROM stdin;
 881	2024-06-17	\N	45	OZON_FBS	MP
 882	2024-06-17	\N	1	Yandex Market	MP
 883	2024-06-17	\N	54	WB_FBS	MP
+884	2024-06-18	82390	1	Самовывоз	KF
+886	2024-06-18	\N	17	OZON_FBS	MP
+885	2024-06-18	\N	14	Yandex Market	MP
+890	2024-06-19	\N	16	OZON_FBS	MP
+895	2024-06-19	82423	1	CDEK	KF
+896	2024-06-19	82413	1	CDEK	KF
+897	2024-06-19	82404	1	CDEK	KF
+898	2024-06-19	82408	1	CDEK	KF
+891	2024-06-19	\N	1	Yandex Market	MP
 \.
 
 
 --
--- Data for Name: repeated; Type: TABLE DATA; Schema: public; Owner: u0_a448
+-- Data for Name: money; Type: TABLE DATA; Schema: public; Owner: u0_a521
+--
+
+COPY public.money (id, amount) FROM stdin;
+884	667
+886	14247
+890	8801
+895	38
+896	1366
+897	607
+898	5010
+\.
+
+
+--
+-- Data for Name: repeated; Type: TABLE DATA; Schema: public; Owner: u0_a521
 --
 
 COPY public.repeated (id, repeat, place, date) FROM stdin;
@@ -1002,14 +1038,14 @@ COPY public.repeated (id, repeat, place, date) FROM stdin;
 
 
 --
--- Name: kupiflakon_id_seq; Type: SEQUENCE SET; Schema: public; Owner: u0_a448
+-- Name: kupiflakon_id_seq; Type: SEQUENCE SET; Schema: public; Owner: u0_a521
 --
 
-SELECT pg_catalog.setval('public.kupiflakon_id_seq', 883, true);
+SELECT pg_catalog.setval('public.kupiflakon_id_seq', 899, true);
 
 
 --
--- Name: jambs jambs_pkey; Type: CONSTRAINT; Schema: public; Owner: u0_a448
+-- Name: jambs jambs_pkey; Type: CONSTRAINT; Schema: public; Owner: u0_a521
 --
 
 ALTER TABLE ONLY public.jambs
@@ -1017,7 +1053,7 @@ ALTER TABLE ONLY public.jambs
 
 
 --
--- Name: kupiflakon kupiflakon_pkey; Type: CONSTRAINT; Schema: public; Owner: u0_a448
+-- Name: kupiflakon kupiflakon_pkey; Type: CONSTRAINT; Schema: public; Owner: u0_a521
 --
 
 ALTER TABLE ONLY public.kupiflakon
@@ -1025,7 +1061,15 @@ ALTER TABLE ONLY public.kupiflakon
 
 
 --
--- Name: repeated repeated_pkey; Type: CONSTRAINT; Schema: public; Owner: u0_a448
+-- Name: money money_pkey; Type: CONSTRAINT; Schema: public; Owner: u0_a521
+--
+
+ALTER TABLE ONLY public.money
+    ADD CONSTRAINT money_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: repeated repeated_pkey; Type: CONSTRAINT; Schema: public; Owner: u0_a521
 --
 
 ALTER TABLE ONLY public.repeated
@@ -1033,21 +1077,21 @@ ALTER TABLE ONLY public.repeated
 
 
 --
--- Name: TABLE jambs; Type: ACL; Schema: public; Owner: u0_a448
+-- Name: TABLE jambs; Type: ACL; Schema: public; Owner: u0_a521
 --
 
 GRANT SELECT,INSERT,DELETE,UPDATE ON TABLE public.jambs TO maxtyrsa;
 
 
 --
--- Name: TABLE kupiflakon; Type: ACL; Schema: public; Owner: u0_a448
+-- Name: TABLE kupiflakon; Type: ACL; Schema: public; Owner: u0_a521
 --
 
 GRANT SELECT,INSERT,DELETE,UPDATE ON TABLE public.kupiflakon TO maxtyrsa;
 
 
 --
--- Name: TABLE repeated; Type: ACL; Schema: public; Owner: u0_a448
+-- Name: TABLE repeated; Type: ACL; Schema: public; Owner: u0_a521
 --
 
 GRANT SELECT,INSERT,DELETE,UPDATE ON TABLE public.repeated TO maxtyrsa;
