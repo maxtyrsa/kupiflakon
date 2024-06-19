@@ -26,4 +26,4 @@ except OperationalError:
 finally:
     if db_connection:
         db_connection.close()
-        print("Closed connection.")
+        print("Запись успешно добавлена.")

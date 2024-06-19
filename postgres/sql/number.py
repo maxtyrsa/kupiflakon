@@ -19,4 +19,4 @@ except OperationalError:
 finally:
     if db_connection:
         db_connection.close()
-        print("Closed connection.")
+        print("Соединение с PostgreSQL закрыто.")
