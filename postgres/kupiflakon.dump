@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 16.3
--- Dumped by pg_dump version 16.3
+-- Dumped from database version 15.7 (Debian 15.7-0+deb12u1)
+-- Dumped by pg_dump version 15.7 (Debian 15.7-0+deb12u1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -21,7 +21,7 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: jambs; Type: TABLE; Schema: public; Owner: u0_a521
+-- Name: jambs; Type: TABLE; Schema: public; Owner: max
 --
 
 CREATE TABLE public.jambs (
@@ -32,10 +32,10 @@ CREATE TABLE public.jambs (
 );
 
 
-ALTER TABLE public.jambs OWNER TO u0_a521;
+ALTER TABLE public.jambs OWNER TO max;
 
 --
--- Name: kupiflakon; Type: TABLE; Schema: public; Owner: u0_a521
+-- Name: kupiflakon; Type: TABLE; Schema: public; Owner: max
 --
 
 CREATE TABLE public.kupiflakon (
@@ -48,10 +48,10 @@ CREATE TABLE public.kupiflakon (
 );
 
 
-ALTER TABLE public.kupiflakon OWNER TO u0_a521;
+ALTER TABLE public.kupiflakon OWNER TO max;
 
 --
--- Name: kupiflakon_id_seq; Type: SEQUENCE; Schema: public; Owner: u0_a521
+-- Name: kupiflakon_id_seq; Type: SEQUENCE; Schema: public; Owner: max
 --
 
 CREATE SEQUENCE public.kupiflakon_id_seq
@@ -63,29 +63,29 @@ CREATE SEQUENCE public.kupiflakon_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.kupiflakon_id_seq OWNER TO u0_a521;
+ALTER TABLE public.kupiflakon_id_seq OWNER TO max;
 
 --
--- Name: kupiflakon_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: u0_a521
+-- Name: kupiflakon_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: max
 --
 
 ALTER SEQUENCE public.kupiflakon_id_seq OWNED BY public.kupiflakon.id;
 
 
 --
--- Name: money; Type: TABLE; Schema: public; Owner: u0_a521
+-- Name: money; Type: TABLE; Schema: public; Owner: max
 --
 
 CREATE TABLE public.money (
     id integer NOT NULL,
-    amount numeric
+    amount money
 );
 
 
-ALTER TABLE public.money OWNER TO u0_a521;
+ALTER TABLE public.money OWNER TO max;
 
 --
--- Name: repeated; Type: TABLE; Schema: public; Owner: u0_a521
+-- Name: repeated; Type: TABLE; Schema: public; Owner: max
 --
 
 CREATE TABLE public.repeated (
@@ -96,17 +96,17 @@ CREATE TABLE public.repeated (
 );
 
 
-ALTER TABLE public.repeated OWNER TO u0_a521;
+ALTER TABLE public.repeated OWNER TO max;
 
 --
--- Name: kupiflakon id; Type: DEFAULT; Schema: public; Owner: u0_a521
+-- Name: kupiflakon id; Type: DEFAULT; Schema: public; Owner: max
 --
 
 ALTER TABLE ONLY public.kupiflakon ALTER COLUMN id SET DEFAULT nextval('public.kupiflakon_id_seq'::regclass);
 
 
 --
--- Data for Name: jambs; Type: TABLE DATA; Schema: public; Owner: u0_a521
+-- Data for Name: jambs; Type: TABLE DATA; Schema: public; Owner: max
 --
 
 COPY public.jambs (id, jamb, place, date) FROM stdin;
@@ -115,7 +115,7 @@ COPY public.jambs (id, jamb, place, date) FROM stdin;
 
 
 --
--- Data for Name: kupiflakon; Type: TABLE DATA; Schema: public; Owner: u0_a521
+-- Data for Name: kupiflakon; Type: TABLE DATA; Schema: public; Owner: max
 --
 
 COPY public.kupiflakon (id, date, number, place, t_c, branch) FROM stdin;
@@ -1023,31 +1023,31 @@ COPY public.kupiflakon (id, date, number, place, t_c, branch) FROM stdin;
 
 
 --
--- Data for Name: money; Type: TABLE DATA; Schema: public; Owner: u0_a521
+-- Data for Name: money; Type: TABLE DATA; Schema: public; Owner: max
 --
 
 COPY public.money (id, amount) FROM stdin;
-884	667
-886	14247
-890	8801
-895	38
-896	1366
-897	607
-898	5010
-900	3674
-901	711
-902	1481
-903	1411
-904	1882
-905	914
-906	35080
-907	9200
-908	125653
+884	667,00 ₽
+886	14 247,00 ₽
+890	8 801,00 ₽
+895	38,00 ₽
+896	1 366,00 ₽
+897	607,00 ₽
+898	5 010,00 ₽
+900	3 674,00 ₽
+901	711,00 ₽
+902	1 481,00 ₽
+903	1 411,00 ₽
+904	1 882,00 ₽
+905	914,00 ₽
+906	35 080,00 ₽
+907	9 200,00 ₽
+908	125 653,00 ₽
 \.
 
 
 --
--- Data for Name: repeated; Type: TABLE DATA; Schema: public; Owner: u0_a521
+-- Data for Name: repeated; Type: TABLE DATA; Schema: public; Owner: max
 --
 
 COPY public.repeated (id, repeat, place, date) FROM stdin;
@@ -1056,14 +1056,14 @@ COPY public.repeated (id, repeat, place, date) FROM stdin;
 
 
 --
--- Name: kupiflakon_id_seq; Type: SEQUENCE SET; Schema: public; Owner: u0_a521
+-- Name: kupiflakon_id_seq; Type: SEQUENCE SET; Schema: public; Owner: max
 --
 
 SELECT pg_catalog.setval('public.kupiflakon_id_seq', 908, true);
 
 
 --
--- Name: jambs jambs_pkey; Type: CONSTRAINT; Schema: public; Owner: u0_a521
+-- Name: jambs jambs_pkey; Type: CONSTRAINT; Schema: public; Owner: max
 --
 
 ALTER TABLE ONLY public.jambs
@@ -1071,7 +1071,7 @@ ALTER TABLE ONLY public.jambs
 
 
 --
--- Name: kupiflakon kupiflakon_pkey; Type: CONSTRAINT; Schema: public; Owner: u0_a521
+-- Name: kupiflakon kupiflakon_pkey; Type: CONSTRAINT; Schema: public; Owner: max
 --
 
 ALTER TABLE ONLY public.kupiflakon
@@ -1079,7 +1079,7 @@ ALTER TABLE ONLY public.kupiflakon
 
 
 --
--- Name: money money_pkey; Type: CONSTRAINT; Schema: public; Owner: u0_a521
+-- Name: money money_pkey; Type: CONSTRAINT; Schema: public; Owner: max
 --
 
 ALTER TABLE ONLY public.money
@@ -1087,7 +1087,7 @@ ALTER TABLE ONLY public.money
 
 
 --
--- Name: repeated repeated_pkey; Type: CONSTRAINT; Schema: public; Owner: u0_a521
+-- Name: repeated repeated_pkey; Type: CONSTRAINT; Schema: public; Owner: max
 --
 
 ALTER TABLE ONLY public.repeated
@@ -1095,21 +1095,21 @@ ALTER TABLE ONLY public.repeated
 
 
 --
--- Name: TABLE jambs; Type: ACL; Schema: public; Owner: u0_a521
+-- Name: TABLE jambs; Type: ACL; Schema: public; Owner: max
 --
 
 GRANT SELECT,INSERT,DELETE,UPDATE ON TABLE public.jambs TO maxtyrsa;
 
 
 --
--- Name: TABLE kupiflakon; Type: ACL; Schema: public; Owner: u0_a521
+-- Name: TABLE kupiflakon; Type: ACL; Schema: public; Owner: max
 --
 
 GRANT SELECT,INSERT,DELETE,UPDATE ON TABLE public.kupiflakon TO maxtyrsa;
 
 
 --
--- Name: TABLE repeated; Type: ACL; Schema: public; Owner: u0_a521
+-- Name: TABLE repeated; Type: ACL; Schema: public; Owner: max
 --
 
 GRANT SELECT,INSERT,DELETE,UPDATE ON TABLE public.repeated TO maxtyrsa;
