@@ -14,12 +14,6 @@ try:
             db_cursor.execute("SELECT * FROM kupiflakon WHERE date = CURRENT_DATE;")
             x = db_cursor.fetchall()
             print(str(x).replace('), (', '\n'))
-        # Insert one update
-            i = int(input("Введите id: "))
-            a = int(input("Введите новое количество: "))
-            insert_record = 'UPDATE kupiflakon SET place = %s WHERE date = CURRENT_DATE and id = %s;'
-            insert_value = (a, i)
-            db_cursor.execute(insert_record, insert_value)
 #except OperationalError:
 #    print("Ошибка подключения к базе данных :/")
 
