@@ -8,8 +8,8 @@ db_info = get_db_info(filename,section)
 
 try:
     with psycopg2.connect(**db_info) as db_connection:
-        print("Successfully connected to the database.")
-         
+        print("Успешно подключено к базе данных.")
+
         with db_connection.cursor() as db_cursor:
         # Insert one record
                 d = datetime.now().strftime('%Y-%m-%d')
@@ -54,10 +54,13 @@ try:
                 insert_record = 'INSERT INTO kupiflakon (date, number, place, t_c, branch) VALUES (%s, %s, %s, %s, %s);'
                 insert_value = (d, numb, p, tk, branch)
                 db_cursor.execute(insert_record, insert_value)
-except OperationalError:
-    print("Error connecting to the database :/")
+#except OperationalError:
+#    print("Ошибка подключения к базе данных :/")
+
+except (ValueError, NameError, TypeError):
+    print("Ошибка ввода данных")
 
 finally:
     if db_connection:
         db_connection.close()
-        print("Запись успешно добавлена.")
+        print("Соединение с PostgreSQL закрыто.")

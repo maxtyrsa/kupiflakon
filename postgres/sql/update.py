@@ -8,9 +8,12 @@ db_info = get_db_info(filename,section)
 
 try:
     with psycopg2.connect(**db_info) as db_connection:
-        print("Successfully connected to the database.")
-         
+        print("Успешно подключено к базе данных.")
+
         with db_connection.cursor() as db_cursor:
+            db_cursor.execute("SELECT * FROM kupiflakon WHERE date = CURRENT_DATE;")
+            x = db_cursor.fetchall()
+            print(str(x).replace('), (', '\n'))
         # Insert one update
             a = int(input("Введите новое количество: "))
             print("""Выберите ТК:
@@ -35,10 +38,13 @@ try:
             insert_record = 'UPDATE kupiflakon SET place = %s WHERE date = CURRENT_DATE and t_c = %s;'
             insert_value = (a, word)
             db_cursor.execute(insert_record, insert_value)
-except OperationalError:
-    print("Error connecting to the database :/")
+#except OperationalError:
+#    print("Ошибка подключения к базе данных :/")
+
+except (ValueError, NameError, TypeError):
+    print("Ошибка ввода данных")
 
 finally:
     if db_connection:
         db_connection.close()
-        print("Запись успешно обновлена.")
+        print("Соединение с PostgreSQL закрыто.")

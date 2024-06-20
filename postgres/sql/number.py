@@ -7,14 +7,18 @@ db_info = get_db_info(filename,section)
 
 try:
     with psycopg2.connect(**db_info) as db_connection:
-        print("Successfully connected to the database.")
+        print("Успешно подключено к базе данных.")
          
         with db_connection.cursor() as db_cursor:
             n = int(input("Введите номер заказа: "))
             db_cursor.execute('SELECT * FROM kupiflakon WHERE number = %s;', (n,))
             print(db_cursor.fetchone())
-except OperationalError:
-    print("Error connecting to the database :/")
+#except OperationalError:
+#    print("Ошибка подключения к базе данных :/")
+except (ValueError, NameError, TypeError):
+    print("Ошибка ввода данных")
+#except NameError:
+#    print("Неверный ввод")
 
 finally:
     if db_connection:
