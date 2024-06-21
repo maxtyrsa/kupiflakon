@@ -47,9 +47,10 @@ try:
 Выберите подразделение:
 1 - MP
 2 - KF
+3 - Pack Stage
        """)
                 b = input("Branch: ")
-                company = [' ', 'MP', 'KF']
+                company = [' ', 'MP', 'KF', 'Pack Stage']
                 branch = company[int(b)]
                 insert_record = 'INSERT INTO kupiflakon (date, number, place, t_c, branch) VALUES (%s, %s, %s, %s, %s);'
                 insert_value = (d, numb, p, tk, branch)
