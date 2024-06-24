@@ -1033,6 +1033,8 @@ COPY public.kupiflakon (id, date, number, place, t_c, branch) FROM stdin;
 920	2024-06-21	82452	2	ПЭК	KF
 921	2024-06-21	82467	5	DPD	KF
 922	2024-06-21	\N	1	Образцы	Pack Stage
+923	2024-06-24	\N	37	OZON_FBS	MP
+924	2024-06-24	\N	107	WB_FBS	MP
 \.
 
 
@@ -1068,6 +1070,8 @@ COPY public.money (id, amount) FROM stdin;
 910	5530
 920	14550
 921	17772
+924	34665
+923	20423
 \.
 
 
@@ -1084,7 +1088,7 @@ COPY public.repeated (id, repeat, place, date) FROM stdin;
 -- Name: kupiflakon_id_seq; Type: SEQUENCE SET; Schema: public; Owner: u0_a521
 --
 
-SELECT pg_catalog.setval('public.kupiflakon_id_seq', 922, true);
+SELECT pg_catalog.setval('public.kupiflakon_id_seq', 924, true);
 
 
 --
