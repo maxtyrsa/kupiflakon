@@ -11,7 +11,7 @@ try:
         print("Успешно подключено к базе данных.")
 
         with db_connection.cursor() as db_cursor:
-            db_cursor.execute("SELECT * FROM kupiflakon WHERE date = CURRENT_DATE;")
+            db_cursor.execute("SELECT id, number, t_c FROM kupiflakon WHERE date = CURRENT_DATE;")
             x = db_cursor.fetchall()
             print(str(x).replace('), (', '\n'))
         # Insert one record
