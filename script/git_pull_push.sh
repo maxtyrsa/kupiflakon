@@ -7,3 +7,4 @@ git add *
 git commit * -m 'dump base'
 git push
 pg_ctl -D $PREFIX/var/lib/postgresql stop
+exit
