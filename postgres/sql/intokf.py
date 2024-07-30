@@ -12,14 +12,16 @@ try:
 
         with db_connection.cursor() as db_cursor:
         # Insert one record
-                d = datetime.now().strftime('%Y-%m-%d')
-                n = input("Номер заказа: ")
-                num = (range(0, 100000))
-                numb = num[int(n)]
-                if numb == 0:
-                    numb = None
-                p = input("Количество: ")
-                print("""
+                x = int(input("Введите количество заказов:" ))
+                for i in range(x):
+                    d = datetime.now().strftime('%Y-%m-%d')
+                    n = input("Номер заказа: ")
+                    num = (range(0, 100000))
+                    numb = num[int(n)]
+                    if numb == 0:
+                        numb = None
+                    p = input("Количество: ")
+                    print("""
 Выберите ТК:
 1 - Boxberry
 2 - ПЭК
@@ -40,21 +42,21 @@ try:
 16 - OZON_FBO
 17 - WB_FBO
        """)
-                t = int(input("TK: "))
-                list_tk = [' ',  'Boxberry', 'ПЭК', 'Самовывоз', 'Деловые линии', 'Почта России', 'Yandex Market', 'Mega Market', 'AliExpress', 'Образцы', 'OZON_FBS', 'Ярмарка Мастеров', 'CDEK', 'WB_FBS', 'DPD', 'Бийск', 'OZON_FBO', 'WB_FBO']
-                tk = list_tk[int(t)]
-                print("""
+                    t = int(input("TK: "))
+                    list_tk = [' ',  'Boxberry', 'ПЭК', 'Самовывоз', 'Деловые линии', 'Почта России', 'Yandex Market', 'Mega Market', 'AliExpress', 'Образцы', 'OZON_FBS', 'Ярмарка Мастеров', 'CDEK', 'WB_FBS', 'DPD', 'Бийск', 'OZON_FBO', 'WB_FBO']
+                    tk = list_tk[int(t)]
+                    print("""
 Выберите подразделение:
 1 - MP
 2 - KF
 3 - Pack Stage
        """)
-                b = input("Branch: ")
-                company = [' ', 'MP', 'KF', 'Pack Stage']
-                branch = company[int(b)]
-                insert_record = 'INSERT INTO kupiflakon (date, number, place, t_c, branch) VALUES (%s, %s, %s, %s, %s);'
-                insert_value = (d, numb, p, tk, branch)
-                db_cursor.execute(insert_record, insert_value)
+                    b = input("Branch: ")
+                    company = [' ', 'MP', 'KF', 'Pack Stage']
+                    branch = company[int(b)]
+                    insert_record = 'INSERT INTO kupiflakon (date, number, place, t_c, branch) VALUES (%s, %s, %s, %s, %s);'
+                    insert_value = (d, numb, p, tk, branch)
+                    db_cursor.execute(insert_record, insert_value)
 #except OperationalError:
 #    print("Ошибка подключения к базе данных :/")
 

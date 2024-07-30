@@ -15,11 +15,13 @@ try:
             x = db_cursor.fetchall()
             print(str(x).replace('), (', '\n'))
         # Insert one record
-            a = int(input("Введите id: "))
-            b = int(input("Введите сумму: "))
-            insert_record = 'INSERT INTO money (id, amount) VALUES (%s, %s);'
-            insert_value = (a, b)
-            db_cursor.execute(insert_record, insert_value)
+            x = int(input("Введите количество заказов:" ))
+            for i in range(x):
+                a = int(input("Введите id: "))
+                b = int(input("Введите сумму: "))
+                insert_record = 'INSERT INTO money (id, amount) VALUES (%s, %s);'
+                insert_value = (a, b)
+                db_cursor.execute(insert_record, insert_value)
 #except OperationalError:
 #    print("Ошибка подключения к базе данных :/")
 
