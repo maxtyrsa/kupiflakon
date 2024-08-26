@@ -1273,6 +1273,19 @@ COPY public.kupiflakon (id, date, number, place, t_c, branch) FROM stdin;
 1168	2024-08-23	83453	2	CDEK	KF
 1169	2024-08-23	83466	1	Почта России	KF
 1170	2024-08-23	83415	1	Почта России	KF
+1171	2024-08-26	\N	14	OZON_FBS	MP
+1172	2024-08-26	83454	1	Самовывоз	KF
+1173	2024-08-26	83470	1	DPD	KF
+1174	2024-08-26	83494	5	DPD	KF
+1175	2024-08-26	83462	1	CDEK	KF
+1176	2024-08-26	83472	1	CDEK	KF
+1177	2024-08-26	83457	1	CDEK	KF
+1178	2024-08-26	83441	1	CDEK	KF
+1179	2024-08-26	83442	1	CDEK	KF
+1180	2024-08-26	83456	1	CDEK	KF
+1181	2024-08-26	83475	1	CDEK	KF
+1182	2024-08-26	83402	1	CDEK	KF
+1183	2024-08-26	83471	2	CDEK	KF
 \.
 
 
@@ -1523,6 +1536,20 @@ COPY public.money (id, amount) FROM stdin;
 1168	8165
 1169	1677
 1170	6361
+1118	4929
+1171	10921
+1172	4698
+1173	6645
+1174	19236
+1175	1076
+1176	3450
+1177	1062
+1178	1355
+1179	862
+1180	3725
+1182	1891
+1183	15592
+1181	5215
 \.
 
 
@@ -1539,7 +1566,7 @@ COPY public.repeated (id, repeat, place, date) FROM stdin;
 -- Name: kupiflakon_id_seq; Type: SEQUENCE SET; Schema: public; Owner: u0_a521
 --
 
-SELECT pg_catalog.setval('public.kupiflakon_id_seq', 1170, true);
+SELECT pg_catalog.setval('public.kupiflakon_id_seq', 1183, true);
 
 
 --
