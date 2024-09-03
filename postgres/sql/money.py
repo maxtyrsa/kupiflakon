@@ -18,9 +18,10 @@ try:
             x = int(input("Введите количество заказов:" ))
             for i in range(x):
                 a = int(input("Введите id: "))
-                b = int(input("Введите сумму: "))
+                b = int(input("Введите сумму заказа: "))
+                d = int(input("Введите сумму доставки: "))
                 insert_record = 'INSERT INTO money (id, amount) VALUES (%s, %s);'
-                insert_value = (a, b)
+                insert_value = (a, b-d)
                 db_cursor.execute(insert_record, insert_value)
 #except OperationalError:
 #    print("Ошибка подключения к базе данных :/")
