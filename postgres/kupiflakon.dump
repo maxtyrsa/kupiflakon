@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 16.3
--- Dumped by pg_dump version 16.3
+-- Dumped from database version 16.4
+-- Dumped by pg_dump version 16.4
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -1372,6 +1372,18 @@ COPY public.kupiflakon (id, date, number, place, t_c, branch) FROM stdin;
 1269	2024-09-03	83628	1	CDEK	KF
 1270	2024-09-03	83518	1	CDEK	KF
 1271	2024-09-03	83487	7	DPD	KF
+1272	2024-09-04	83569	1	CDEK	KF
+1273	2024-09-04	83597	1	CDEK	KF
+1274	2024-09-04	83638	1	CDEK	KF
+1275	2024-09-04	83613	1	CDEK	KF
+1276	2024-09-04	83612	2	CDEK	KF
+1277	2024-09-04	83625	1	CDEK	KF
+1278	2024-09-04	83620	1	CDEK	KF
+1279	2024-09-04	83608	2	CDEK	KF
+1280	2024-09-04	83603	1	CDEK	KF
+1281	2024-09-04	83615	6	CDEK	KF
+1282	2024-09-04	83616	2	Почта России	KF
+1283	2024-09-04	83610	3	DPD	KF
 \.
 
 
@@ -1721,6 +1733,18 @@ COPY public.money (id, amount) FROM stdin;
 1253	12699
 1255	8399
 1256	101763
+1272	2099
+1273	2964
+1274	2435
+1275	2510
+1276	16373
+1277	51500
+1278	24450
+1279	30640
+1280	9295
+1281	49752
+1282	12960
+1283	15809
 \.
 
 
@@ -1737,7 +1761,7 @@ COPY public.repeated (id, repeat, place, date) FROM stdin;
 -- Name: kupiflakon_id_seq; Type: SEQUENCE SET; Schema: public; Owner: u0_a521
 --
 
-SELECT pg_catalog.setval('public.kupiflakon_id_seq', 1271, true);
+SELECT pg_catalog.setval('public.kupiflakon_id_seq', 1283, true);
 
 
 --
