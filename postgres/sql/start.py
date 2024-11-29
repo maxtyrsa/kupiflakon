@@ -15,10 +15,10 @@ try:
             db_cursor.execute("SELECT id, number, t_c FROM kupiflakon WHERE date = CURRENT_DATE;")
             #x = db_cursor.fetchall()
             #print(str(x).replace('), (', '\n'))
-        a = int(input("Введите id: "))
+            a = int(input("Введите id: "))
                # b = int(input("Введите сумму заказа: "))
                # d = int(input("Введите сумму доставки: "))
-        db_cursor.execute('INSERT INTO time_start (id, time) VALUES (%s, CURRENT_TIMESTAMP)', [a]);
+            db_cursor.execute('INSERT INTO time_start (id, time) VALUES (%s, CURRENT_TIMESTAMP)', [a]);
 except (ValueError, NameError, TypeError):
     print("Ошибка ввода данных")
 finally:

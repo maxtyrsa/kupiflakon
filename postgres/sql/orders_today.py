@@ -46,10 +46,10 @@ try:
 
     column_names = ["id", "date", "number", "place", "t_c", "branch"]
 # Execute the "SELECT *" query
-    df = postgresql_to_dataframe(conn, "select * from kupiflakon WHERE date = CURRENT_TIMESTAMP", column_names)
+    df = postgresql_to_dataframe(conn, "select * from kupiflakon WHERE date = CURRENT_DATE", column_names)
     if df.len(df) >= 1:
         print(df.head(30))
-    elif df.head(1) < 1:
+    elif df.len(df) < 1:
         print("No data")
 except:
     if len(df) >= 1:
