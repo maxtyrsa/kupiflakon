@@ -53,6 +53,14 @@
 ![kpi_mai](https://github.com/maxtyrsa/kupiflakon/blob/main/dashbord/Май-12.06.2024,%2023_50_11.png?raw=true)
 
 
+iframe(
+    src=iframeUrl
+    frameborder="0"
+    width="800"
+    height="600"
+    allowtransparency
+)
+
 Июнь
 
 
