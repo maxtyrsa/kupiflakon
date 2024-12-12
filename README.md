@@ -52,7 +52,7 @@
 
 ![kpi_mai](https://github.com/maxtyrsa/kupiflakon/blob/main/dashbord/Май-12.06.2024,%2023_50_11.png?raw=true)
 
-![Количество заказов](http://localhost:3000/public/question/8820c841-2443-40bb-9712-8783bd07c0ec)
+[Количество заказов](http://localhost:3000/public/question/8820c841-2443-40bb-9712-8783bd07c0ec)
 
 Июнь
 
