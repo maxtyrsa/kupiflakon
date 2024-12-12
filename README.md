@@ -53,15 +53,27 @@
 ![kpi_mai](https://github.com/maxtyrsa/kupiflakon/blob/main/dashbord/Май-12.06.2024,%2023_50_11.png?raw=true)
 
 
-iframe(
-    src=iframeUrl
-    frameborder="0"
-    width="800"
-    height="600"
-    allowtransparency
-)
 
 Июнь
 
 
 ![kpi_juni](https://github.com/maxtyrsa/kupiflakon/blob/main/dashbord/KPI%20Июнь-12.06.2024,%2023_50_26.png?raw=true)
+
+
+import jwt
+import time
+
+METABASE_SITE_URL = "http://localhost:3000"
+METABASE_SECRET_KEY = "53aa33b38b54f2c5da59ddb9cca21a693edf1a9b2fa79ca627af44297700a6e7"
+
+payload = {
+  "resource": {"question": 38},
+  "params": {
+    
+  },
+  "exp": round(time.time()) + (60 * 10) # 10 minute expiration
+}
+token = jwt.encode(payload, METABASE_SECRET_KEY, algorithm="HS256")
+
+iframeUrl = METABASE_SITE_URL + "/embed/question/" + token +
+  "#bordered=true&titled=true"
