@@ -44,16 +44,15 @@ def postgresql_to_dataframe(conn, select_query, column_names):
 try:
     conn = connect(param_dic)
 
-    column_names = ["id", "date", "number", "place", "t_c", "branch"]
+    column_names = ["number", "count"]
 # Execute the "SELECT *" query
-    k = int(input("Количество с конца: "))
-    df = postgresql_to_dataframe(conn, "select * from kupiflakon WHERE date = CURRENT_DATE", column_names)
+    df = postgresql_to_dataframe(conn, "SELECT  number, COUNT(*) FROM kupiflakon GROUP BY number HAVING COUNT(*) > 1 and number != 0", column_names)
     if df.len(df) >= 1:
         print(df.head(30))
     elif df.len(df) < 1:
         print("No data")
 except:
     if len(df) >= 1:
-        print(df[['id', 'date', 'number', 'place', 't_c']].tail(k))
+        print(df[['number', 'count']])
     else:
         print("No data")
