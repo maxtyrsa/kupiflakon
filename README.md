@@ -66,6 +66,9 @@
 
 Для запуска скриптов, используйте команду `python название_скрипта.py`
 
+[diagram.png
+](https://github.com/maxtyrsa/kupiflakon/blob/main/diagram.png)
+
 Пример: `python start.py`, `python info_order.py`
 
 ## Пример `db_info.ini`
