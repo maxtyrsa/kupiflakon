@@ -69,6 +69,8 @@
 [Диаграмма таблиц
 ](https://github.com/maxtyrsa/kupiflakon/blob/main/diagram.png)
 
+[Дашборд](https://github.com/maxtyrsa/kupiflakon/blob/main/dashboards/%D0%9A%D1%83%D0%BF%D0%B8%20%D0%A4%D0%BB%D0%B0%D0%BA%D0%BE%D0%BD.pdf)
+
 Пример: `python start.py`, `python info_order.py`
 
 ## Пример `db_info.ini`
