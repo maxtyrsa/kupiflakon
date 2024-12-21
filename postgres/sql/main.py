@@ -27,11 +27,11 @@ def get_db_info(filename, section):
 def connect(params_dict):
     conn = None
     try:
-        print("Connecting to the PostgreSQL database...")
+        print("Подключение к базе данных PostgreSQL...")
         conn = psycopg2.connect(**params_dict)
-        print("Connection successful!")
+        print("Подключение прошло успешно!")
     except (Exception, psycopg2.DatabaseError) as error:
-        print(f"Error: {error}")
+        print(f"Ошибка: {error}")
         return None
     return conn
 
@@ -41,7 +41,7 @@ def postgresql_to_dataframe(conn, select_query, column_names):
     try:
         cursor.execute(select_query)
     except (Exception, psycopg2.DatabaseError) as error:
-        print(f"Error: {error}")
+        print(f"Ошибка: {error}")
         cursor.close()
         return None
     tuples = cursor.fetchall()
@@ -59,11 +59,11 @@ def number_search():
         n = int(input("Введите номер заказа: "))
         df = postgresql_to_dataframe(conn, f"SELECT * FROM kupiflakon WHERE number = {n}", column_names)
         if df is None or len(df) == 0:
-            print("NO data")
+            print("Нет данных")
         else:
             print(df.query('number == @n'))
     except Exception as e:
-        print(f"An error occurred: {e}")
+        print(f"Произошла ошибка: {e}")
     finally:
       if conn:
         conn.close()
@@ -78,16 +78,16 @@ def orders_today():
         k = int(input("Количество с конца: "))
         df = postgresql_to_dataframe(conn, "SELECT * FROM kupiflakon WHERE date = CURRENT_DATE", column_names)
         if df is None:
-            print("No data")
+            print("Нет данных")
             return
         if len(df) > 30:
           print(df.tail(k))
         elif len(df) > 0:
             print(df.tail(k))
         else:
-            print("No data")
+            print("Нет данных")
     except Exception as e:
-        print(f"An error occurred: {e}")
+        print(f"Произошла ошибка: {e}")
     finally:
       if conn:
         conn.close()
@@ -99,12 +99,11 @@ def time_end():
             return
         with conn.cursor() as db_cursor:
           db_cursor.execute("SELECT id, number, t_c FROM kupiflakon WHERE date = CURRENT_DATE")
-          print(str(db_cursor.fetchall()).replace('), (', ',\n'))
+          #print(str(db_cursor.fetchall()).replace('), (', ',\n'))
           a = int(input("Введите id: "))
-          d = int(input("Введите сумму доставки: "))
           db_cursor.execute("INSERT INTO time_end (id, time) VALUES (%s, CURRENT_TIMESTAMP)", [a])
         conn.commit()
-        print("Success insert to time_end")
+        print("Успешная вставка в time_end")
     except Exception as e:
       print(f"Ошибка ввода данных: {e}")
       conn.rollback()
@@ -119,12 +118,11 @@ def time_start():
             return
       with conn.cursor() as db_cursor:
         db_cursor.execute("SELECT id, number, t_c FROM kupiflakon WHERE date = CURRENT_DATE")
-        print(str(db_cursor.fetchall()).replace('), (', ',\n'))
+        #print(str(db_cursor.fetchall()).replace('), (', ',\n'))
         a = int(input("Введите id: "))
-        d = int(input("Введите сумму доставки: "))
         db_cursor.execute("INSERT INTO time_start (id, time) VALUES (%s, CURRENT_TIMESTAMP)", [a])
       conn.commit()
-      print("Success insert to time_start")
+      print("Успешная вставка в time_start")
     except Exception as e:
       print(f"Ошибка ввода данных: {e}")
       conn.rollback()
@@ -143,7 +141,7 @@ def money_records():
             db_cursor.execute("SELECT id, number, t_c FROM kupiflakon WHERE date = CURRENT_DATE")
             x = db_cursor.fetchall()
             print(str(x).replace('), (', ',\n'))
-            
+
             x = int(input("Введите количество заказов: "))
             for i in range(x):
               a = int(input("Введите id: "))
@@ -153,7 +151,7 @@ def money_records():
               insert_value = (a, b - d)
               db_cursor.execute(insert_record, insert_value)
         db_connection.commit()
-        print("Success insert to money")
+        print("Успешная вставка в money")
   except Exception as e:
     print(f"Ошибка ввода данных: {e}")
   finally:
@@ -176,7 +174,7 @@ def kupiflakon_insert():
                        n = None
                     else:
                       n = int(n)
-                    num = int(input('Номер по порядку:'))
+                    num = int(input('Количество: '))
                     if num == "":
                       num = None
                     else:
@@ -184,39 +182,41 @@ def kupiflakon_insert():
                     print("""
 Выберите ТК:
     1 - Boxberry
-    2 - Сдэк
+    2 - ПЭК
     3 - Самовывоз
     4 - Деловые линии
     5 - Почта России
     6 - Yandex Market
     7 - Mega Market
     8 - AliExpress
-    9 - Ozon FBS
-   10 - OZON-FBS
-   11 - СберМегаМаркет
-   12 - WB-FBS
-   13 - DPD
-   14 - Байк
-   15 - OZON-FBO
-   16 - WB-FBO
-    --------
+    9 - Образцы
+    10 - OZON_FBS
+    11 - Ярмарка Мастеров
+    12 - CDEK
+    13 - WB_FBS
+    14 - DPD
+    15 - Бийск
+    --------------
+    16 - OZON_FBO
+    17 - WB_FBO
 """)
                     list_tk = [
-    'Boxberry', 'Сдэк', 'Самовывоз', 'Деловые линии', 'Почта России', 
-    'Yandex Market', 'Mega Market', 'AliExpress', 'Ozon FBS', 'OZON-FBS', 
-    'СберМегаМаркет', 'WB-FBS', 'DPD', 'Байк', 'OZON-FBO', 'WB-FBO'
+    'Boxberry', 'ПЭК', 'Самовывоз', 'Деловые линии', 
+    'Почта России', 'Yandex Market', 'Mega Market', 
+    'AliExpress', 'Образцы', 'OZON_FBS', 'Ярмарка Мастеров', 
+    'CDEK', 'WB_FBS', 'DPD', 'Бийск', 'OZON_FBO', 'WB_FBO'
                     ]
                     tk = int(input("TK: "))
                     tk = list_tk[tk-1]
                     print("""
 Выберите подразделение:
-    1 - МФ
-    2 - КФ
+    1 - Маркетплейс
+    2 - Купи-Флакон
     3 - Pack Stage
     ----
     """)
                     list_branch = [
-                        'МФ', 'КФ', 'Pack Stage'
+                        'MP', 'KF', 'Pack Stage'
                     ]
                     b = int(input("Branch: "))
                     company = list_branch[b-1]
@@ -225,7 +225,7 @@ def kupiflakon_insert():
                     insert_value = (date_str, n, num, tk, company)
                     db_cursor.execute(insert_record, insert_value)
             db_connection.commit()
-            print("Success insert to kupiflakon")
+            print("Успешная вставка в kupiflakon")
     except Exception as e:
         print(f"Ошибка ввода данных: {e}")
         db_connection.rollback()
@@ -257,7 +257,7 @@ def info_order():
         print('Количество заказов:', df.place.shape[0], 'шт')
         print('Сумма в среднем за один заказ:', round(np.mean(df.amount)), '₽')
     except Exception as e:
-        print(f"An error occurred: {e}")
+        print(f"Произошла ошибка: {e}")
     finally:
         if conn:
             conn.close()
@@ -277,7 +277,7 @@ def update_kupiflakon():
           a = int(input("Введите новое количество: "))
           db_cursor.execute("UPDATE kupiflakon SET place = %s WHERE date = CURRENT_DATE AND id = %s;", (a, i))
       db_connection.commit()
-      print("Success update to kupiflakon")
+      print("Успешная вставка в kupiflakon")
   except Exception as e:
       print(f"Ошибка ввода данных: {e}")
       db_connection.rollback()
@@ -311,7 +311,7 @@ def repeated_insert():
                 insert_value = (i, word, p, d)
                 db_cursor.execute(insert_record, insert_value)
             db_connection.commit()
-            print("Success insert to repeated")
+            print("Успешная вставка вrepeated")
     except Exception as e:
         print(f"Ошибка ввода данных: {e}")
         db_connection.rollback()
@@ -345,7 +345,7 @@ def jambs_insert():
               insert_value = (i, word, p, d)
               db_cursor.execute(insert_record, insert_value)
           db_connection.commit()
-          print("Success insert to jambs")
+          print("Успешная вставка в jambs")
   except Exception as e:
       print(f"Ошибка ввода данных: {e}")
       db_connection.rollback()
@@ -362,13 +362,13 @@ def duplicates_search():
       column_names = ['number', 'count']
       df = postgresql_to_dataframe(conn,"SELECT number, COUNT(*) FROM kupiflakon GROUP BY number HAVING COUNT(*) > 1 and number IS NOT NULL", column_names)
       if df is None:
-          print("No data")
+          print("Нет данных")
       elif len(df) > 0:
         print(df.head())
       else:
-        print("No data")
+        print("Нет данных")
     except Exception as e:
-      print(f"An error occurred: {e}")
+      print(f"Произошла ошибка: {e}")
     finally:
       if conn:
         conn.close()
@@ -419,4 +419,4 @@ if __name__ == "__main__":
           break
       else:
           print("Неверный выбор. Попробуйте снова.")
-print("База данных закрыта")
+print("Соединение с PostgreSQL закрыто")
