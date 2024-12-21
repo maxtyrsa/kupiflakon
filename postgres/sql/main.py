@@ -55,13 +55,13 @@ def number_search():
         conn = connect(param_dict)
         if conn is None:
             return
-        column_names = ["id", "date", "number", "place", "t_c", "branch"]
+        column_names = ["ID", "Дата", "Номер", "Место", "ТК", "Филиал"]
         n = int(input("Введите номер заказа: "))
         df = postgresql_to_dataframe(conn, f"SELECT * FROM kupiflakon WHERE number = {n}", column_names)
         if df is None or len(df) == 0:
             print("Нет данных")
         else:
-            print(df.query('number == @n'))
+            print(df.query('Номер == @n'))
     except Exception as e:
         print(f"Произошла ошибка: {e}")
     finally:
@@ -74,7 +74,7 @@ def orders_today():
         conn = connect(param_dict)
         if conn is None:
             return
-        column_names = ["id", "date", "number", "place", "t_c", "branch"]
+        column_names = ["ID", "Дата", "Номер", "Место", "ТК", "Филиал"]
         k = int(input("Количество с конца: "))
         df = postgresql_to_dataframe(conn, "SELECT * FROM kupiflakon WHERE date = CURRENT_DATE", column_names)
         if df is None:
@@ -238,7 +238,7 @@ def info_order():
         conn = connect(param_dict)
         if conn is None:
             return
-        column_names = ["id", "date", "number", "place","amount","t_c", "branch"]
+        column_names = ["ID", "Дата", "Номер", "Место", "Сумма", "ТК", "Филиал"]
         date_start = input("Введите начальную дату в формате ГГГГ-ММ-ДД: ")
         year_s, month_s, day_s = [int(item) for item in date_start.split('-')]
         date_start = datetime(year_s, month_s, day_s)
@@ -253,9 +253,19 @@ def info_order():
         if df is None:
             print("No data")
             return
-        print('Итого:' ,df.amount.sum(), '₽')
-        print('Количество заказов:', df.place.shape[0], 'шт')
-        print('Сумма в среднем за один заказ:', round(np.mean(df.amount)), '₽')
+        print('Итого:' ,df.Сумма.sum(), '₽')
+        print('Количество заказов:', df.Место.shape[0], 'шт')
+        print('Сумма в среднем за один заказ:', round(np.mean(df.Сумма)), '₽')
+        print("----------------------------------------------")
+        print("Количество заказов по Купи-Флакон")
+        print(df.query('Филиал == "KF"').groupby('ТК', as_index=False).agg({'Место': 'count'}).sort_values('Место', ascending=False))
+        print("Количество заказов по Маркетплейсам")
+        print(df.query('Филиал == "MP"').groupby('ТК', as_index=False).agg({'Место': 'sum'}).sort_values('Место', ascending=False))
+        print("----------------------------------------------")
+        print("Сумма заказов по Купи-Флакон")
+        print(df.query('Филиал == "KF"').groupby('ТК', as_index=False).agg({'Сумма': 'sum'}).sort_values('Сумма', ascending=False))
+        print("Сумма заказов по Маркетплейсам")
+        print(df.query('Филиал == "MP"').groupby('ТК', as_index=False).agg({'Сумма': 'sum'}).sort_values('Сумма', ascending=False))
     except Exception as e:
         print(f"Произошла ошибка: {e}")
     finally:
