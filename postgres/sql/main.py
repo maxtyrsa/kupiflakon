@@ -55,7 +55,7 @@ def number_search():
         conn = connect(param_dict)
         if conn is None:
             return
-        column_names = ["id", "date", "number", "place", "t_c", "branch"]
+        column_names = ["id", "Дата", "Номер заказа", "Места", "ТК", "Подразделение"]
         n = int(input("Введите номер заказа: "))
         df = postgresql_to_dataframe(conn, f"SELECT * FROM kupiflakon WHERE number = {n}", column_names)
         if df is None or len(df) == 0:
@@ -74,7 +74,7 @@ def orders_today():
         conn = connect(param_dict)
         if conn is None:
             return
-        column_names = ["id", "date", "number", "place", "t_c", "branch"]
+        column_names = ["id", "Дата", "Номер заказа", "Места", "ТК", "Подразделение"]
         k = int(input("Количество с конца: "))
         df = postgresql_to_dataframe(conn, "SELECT * FROM kupiflakon WHERE date = CURRENT_DATE", column_names)
         if df is None:
@@ -238,7 +238,7 @@ def info_order():
         conn = connect(param_dict)
         if conn is None:
             return
-        column_names = ["id", "date", "number", "place","amount","t_c", "branch"]
+        column_names = ["id", "Дата", "Номер заказа", "Места","Сумма","ТК", "Подразделение"]
         date_start = input("Введите начальную дату в формате ГГГГ-ММ-ДД: ")
         year_s, month_s, day_s = [int(item) for item in date_start.split('-')]
         date_start = datetime(year_s, month_s, day_s)
@@ -359,7 +359,7 @@ def duplicates_search():
       conn = connect(param_dict)
       if conn is None:
         return
-      column_names = ['number', 'count']
+      column_names = ['Номер заказа', 'Количество']
       df = postgresql_to_dataframe(conn,"SELECT number, COUNT(*) FROM kupiflakon GROUP BY number HAVING COUNT(*) > 1 and number IS NOT NULL", column_names)
       if df is None:
           print("Нет данных")
