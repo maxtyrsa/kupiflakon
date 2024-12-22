@@ -238,7 +238,7 @@ def info_order():
         conn = connect(param_dict)
         if conn is None:
             return
-        column_names = ["ID", "Дата", "Номер", "Место", "Сумма", "ТК", "Филиал"]
+        column_names = ["ID", "Дата", "Номер", "Мест", "Сумма", "ТК", "Филиал"]
         date_start = input("Введите начальную дату в формате ГГГГ-ММ-ДД: ")
         year_s, month_s, day_s = [int(item) for item in date_start.split('-')]
         date_start = datetime(year_s, month_s, day_s)
@@ -253,14 +253,15 @@ def info_order():
         if df is None:
             print("No data")
             return
+        print("----------------------------------------------")
         print('Итого:' ,df.Сумма.sum(), '₽')
-        print('Количество заказов:', df.Место.shape[0], 'шт')
+        print('Количество заказов:', df.Мест.shape[0], 'шт')
         print('Сумма в среднем за один заказ:', round(np.mean(df.Сумма)), '₽')
         print("----------------------------------------------")
         print("Количество заказов по Купи-Флакон")
-        print(df.query('Филиал == "KF"').groupby('ТК', as_index=False).agg({'Место': 'count'}).sort_values('Место', ascending=False))
+        print(df.query('Филиал == "KF"').groupby('ТК', as_index=False).agg({'Мест': 'count'}).sort_values('Мест', ascending=False))
         print("Количество заказов по Маркетплейсам")
-        print(df.query('Филиал == "MP"').groupby('ТК', as_index=False).agg({'Место': 'sum'}).sort_values('Место', ascending=False))
+        print(df.query('Филиал == "MP"').groupby('ТК', as_index=False).agg({'Мест': 'sum'}).sort_values('Мест', ascending=False))
         print("----------------------------------------------")
         print("Сумма заказов по Купи-Флакон")
         print(df.query('Филиал == "KF"').groupby('ТК', as_index=False).agg({'Сумма': 'sum'}).sort_values('Сумма', ascending=False))
@@ -295,39 +296,6 @@ def update_kupiflakon():
     if db_connection:
         db_connection.close()
 
-def repeated_insert():
-    filename = 'db_info.ini'
-    section = 'postgres-sample-db'
-    db_info = get_db_info(filename, section)
-    try:
-        with psycopg2.connect(**db_info) as db_connection:
-            with db_connection.cursor() as db_cursor:
-                n = int(input("Введите номер заказа: "))
-                db_cursor.execute('SELECT * FROM kupiflakon WHERE number = %s;', (n,))
-                print(str(db_cursor.fetchall()))
-                i = int(input("Введите id: "))
-                p = input("Количество мест: ")
-                d = datetime.now().strftime('%y-%m-%d')
-                print("""
-                    Выберете статус:
-                        1 - Повтор
-                        2 - Ошибка
-                        3 - Возврат
-                    """)
-                ones = ['Повтор', 'Ошибка', 'Возврат']
-                j = int(input("Статус: "))
-                word = ones[j-1]
-                insert_record = 'INSERT INTO repeated (id, repeat, place, date) VALUES (%s, %s, %s, %s)'
-                insert_value = (i, word, p, d)
-                db_cursor.execute(insert_record, insert_value)
-            db_connection.commit()
-            print("Успешная вставка вrepeated")
-    except Exception as e:
-        print(f"Ошибка ввода данных: {e}")
-        db_connection.rollback()
-    finally:
-        if db_connection:
-            db_connection.close()
 
 def jambs_insert():
   filename = 'db_info.ini'
@@ -347,8 +315,10 @@ def jambs_insert():
                       1 - Ошибка
                       2 - Недовложение
                       3 - Лишнее
+                      4 - Возврат
+                      5 - Повтор
                   """)
-              ones = ['Ошибка', 'Недовложение', 'Лишнее']
+              ones = ['Ошибка', 'Недовложение', 'Лишнее', 'Возврат', 'Повтор']
               j = int(input("Статус: "))
               word = ones[j-1]
               insert_record = 'INSERT INTO jambs (id, jamb, place, date) VALUES (%s, %s, %s, %s)'
@@ -390,15 +360,14 @@ if __name__ == "__main__":
    
     1 - Поиск заказа по номеру
     2 - Показать заказы за сегодня
-    3 - Зафиксировать конец обработки заказа
-    4 - Зафиксировать начало обработки заказа
-    5 - Внести данные о суммах заказов
+    3 - Конец сборки заказа
+    4 - Начало сборки заказа
+    5 - Внести данные в money
     6 - Внести данные в kupiflakon
-    7 - Вывести данные по заказу и сумме за определенный период
-    8 - Обновить данные о месте
-    9 - Занести данные в repeated
-    10 - Занести данные в jambs
-    11 - Поиск дубликатов
+    7 - Статистика определенный период
+    8 - Обновить данные по местам
+    9 - Занести данные в jambs
+    10 - Поиск дубликатов
     0 - Выход
 
 """)
@@ -420,10 +389,8 @@ if __name__ == "__main__":
       elif choice == "8":
         update_kupiflakon()
       elif choice == "9":
-        repeated_insert()
-      elif choice == "10":
         jambs_insert()
-      elif choice == "11":
+      elif choice == "10":
           duplicates_search()
       elif choice == "0":
           break
