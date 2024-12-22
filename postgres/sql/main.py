@@ -317,8 +317,9 @@ def jambs_insert():
                       3 - Лишнее
                       4 - Возврат
                       5 - Повтор
+                      6 - Обмен
                   """)
-              ones = ['Ошибка', 'Недовложение', 'Лишнее', 'Возврат', 'Повтор']
+              ones = ['Ошибка', 'Недовложение', 'Лишнее', 'Возврат', 'Повтор', 'Обмен']
               j = int(input("Статус: "))
               word = ones[j-1]
               insert_record = 'INSERT INTO jambs (id, jamb, place, date) VALUES (%s, %s, %s, %s)'
