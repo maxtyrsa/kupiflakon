@@ -69,7 +69,7 @@
 [Диаграмма таблиц
 ](https://github.com/maxtyrsa/kupiflakon/blob/main/diagram.png)
 
-[Дашборд](https://datalens.yandex/4r07qdh737xwq)
+[Дашборд](https://datalens.yandex/reu8ry88j65ud)
 
 Пример: `python start.py`, `python info_order.py`
 
